@@ -1,0 +1,4000 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5LLBR8Z');</script>
+    <!-- End Google Tag Manager -->
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Analytics Dashboard 2</title>
+
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="plugins/Dashicons/css/dashicons_style.css">
+
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,500,600,700" rel="stylesheet">
+  <link
+    href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
+    rel='stylesheet' type='text/css'>
+
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.8/collection/icon/icon.css" rel="stylesheet" />
+
+  <link href="dist/css/select2.min.css" rel="stylesheet" />
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.css">
+  <style>
+    .navbar-nav.ml-auto {
+      display: none;
+    }
+
+    #wrapper {
+      position: relative;
+
+      margin: 0 60px;
+    }
+
+    /* .title-header{
+        max-width: 1540px;
+      } */
+    #container {
+      /* margin-top: 100px; */
+      width: 100%;
+    }
+
+    .addTileList .item {
+        width: 450px;
+        height: 450px;
+      }
+    
+      .addTileList .item .content,
+      .addTileList .item .settings {
+        box-sizing: border-box;
+        padding: 10px;
+        background-color: #f3f3f3;
+        border-radius: 0px;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        height: 100;
+        height: 10;
+        height: 1;
+        -webkit-border-radius: 0px;
+        height: 100%;
+      }
+    
+      .addTileList .item.w2 {
+        width: 920px
+      }
+    
+      .addTileList .item.height2 {
+        height: 215px !important;
+      }
+
+    #container .item.ui-draggable-guide {
+      background: none;
+      border: 2px dashed #444444;
+    }
+
+    .select2-container {
+      width: 60% !important;
+    }
+
+    .dropdown-menu .select2-container {
+      width: 100% !important;
+      margin-bottom: 1rem;
+    }
+
+    .add-new-widget>.btn>span {
+      margin-right: 10px;
+      position: relative;
+      top: -0px;
+    }
+
+    .add-new-widget>.btn>span+i {
+      transform: rotate(45deg);
+      display: block;
+      float: right;
+      padding: 5px;
+      font-size: 10px;
+
+    }
+
+    /* Switch to 2 column layout if the screen is too narrow */
+    @media only screen and (max-width:1050px) {
+
+      #add-tiles-wrapper,
+      #wrapper {
+        width: 900px;
+      }
+    }
+
+    /* Switch to 4 column layout if the screen is wide enough narrow */
+    @media only screen and (min-width: 1570px) {
+
+      #add-tiles-wrapper,
+      #wrapper {}
+    }
+
+    .select2-container.select2-container--default.select2-container--open {
+      z-index: 10000;
+    }
+
+    .select2-container {
+      width: 250px !important;
+    }
+
+    .twitter-feeds .SandboxRoot.env-bp-430 .timeline-Tweet-text {
+      font-size: 14px !important;
+    }
+  </style>
+</head>
+
+<body class="hold-transition sidebar-mini sidebar-open ">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LLBR8Z"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom fixed-top ">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="fe-logo">
+          <a><img src="./dist/img/fe/FE_Analytics.svg" /></a>
+        </li>
+        <li class="cl-logo"  >
+          <a><img src="./dist/img/fe/wp-logo.png" /></a>
+        </li>
+      </ul>
+      <!-- SEARCH FORM -->
+      <form class="form-inline ml-3 header-search">
+        <div class="input-group input-group-sm">
+          <input class="form-control form-control-navbar" type="search" placeholder="Search for funds, reports or help"
+            aria-label="Search">
+          <div class="input-group-append dropdown">
+            <div class="btn btn-navbar">
+              <i class="fa fa-search"></i>
+            </div>
+          </div>
+          <div class="search-result-dropdown" style="display:none">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#funds" role="tab" aria-controls="home"
+                  aria-selected="true">Funds (20)</a>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#equities" role="tab"
+                  aria-controls="profile" aria-selected="false">Equities (20)</a>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link" id="messages-tab" data-toggle="tab" href="#modelPortfolios" role="tab"
+                  aria-controls="messages" aria-selected="false">Model Portfolios (1)</a>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link" id="settings-tab" data-toggle="tab" href="#marketIndices" role="tab"
+                  aria-controls="settings" aria-selected="false">Market Indices (20)</a>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link" id="settings-tab" data-toggle="tab" href="#sectors" role="tab"
+                  aria-controls="settings" aria-selected="false">Sectors (22)</a>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link" id="settings-tab" data-toggle="tab" href="#restricted" role="tab"
+                  aria-controls="settings" aria-selected="false">Restricted (2)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link help-tab" id="settings-tab" data-toggle="tab" href="#documentesHelp" role="tab"
+                  aria-controls="settings" aria-selected="false">Documents & Help</a>
+              </li>
+            </ul>
+            <div class="tab-content search-results-drop">
+              <div class="tab-pane active" id="funds" role="tabpanel" aria-labelledby="home-tab">
+                <div class="card-body p-0">
+                  <h5>Fund Results</h5>
+                  <div class="form-group universe-select-dropdown fund-results">
+                    <div class="label">
+                      <label for="unilist">Fund from</label>
+                    </div>
+                    <div>
+                      <select id="unilist" name="unilist" >
+
+                        <option>ABI Insurance</option>
+                        <option>ABI Pensions</option>
+                        <option>AIC Investment Companies</option>
+                        <option>FE-Rated Passive Investments</option>
+                        <option>Insurance</option>
+                        <option>Investment Association</option>
+                        <option>LSE Equities</option>
+                        <option>Multi-manager</option>
+                        <option>Mutual</option>
+                        <option>Pension</option>
+                        <option>Retail UT and OEICs</option>
+                        <option>UT and OEICs</option>
+                      </select>
+                    </div>
+                  </div>
+                  <table class="table">
+                    <tr>
+                      <td>Aberdeen Japan Equity Fund Inc</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Japan Investment Trust PLC Ord 10p</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>AIC Investment Companies</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Standard Asia Focus Plc Ord 25p</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Latin American Income Ltd Ord</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Japan Investment Trust PLC Ord 10p</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Latin American Income Ltd Ord</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Standard Asia Focus Plc Ord 25p</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Emerging Markets Investment Company Limited Ord 1p NPV</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen New Dawn Investment Trust PLC Ord 5p</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="row align-items-center">
+                  <div class="pagination paginate"> 
+                    <span class="pages-label">Pages</span>
+                    <a class="goto go-prev"><i class="fa fa-angle-left"></i></a>
+                    <span class="current-page">
+                      <input type="text" value="1">
+                    </span>
+                    <span class="slash">/</span>
+                    <span class="total-pages">3</span>
+                    <a class="goto go-next"><i class="fa fa-angle-right"></i></a>
+               </div>
+                  <div>
+                    <a class="close-pane btn btn-secondary btn-sm" href="#"><span>Close</span><span
+                        class="ion-android-close active"></span></a>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="equities" role="tabpanel" aria-labelledby="equities-tab">Equities</div>
+              <div class="tab-pane" id="portfolios" role="tabpanel" aria-labelledby="portfolios-tab">portfolios</div>
+              <div class="tab-pane" id="modelPortfolios" role="tabpanel" aria-labelledby="model-portfolios-tab">Model
+                Portfolios</div>
+              <div class="tab-pane" id="marketIndices" role="tabpanel" aria-labelledby="market-indices-tab">Market
+                Indices</div>
+              <div class="tab-pane" id="sectors" role="tabpanel" aria-labelledby="sectors-tab">Sectors</div>
+              <div class="tab-pane" id="restricted" role="tabpanel" aria-labelledby="restricted-tab">Restricted</div>
+              <div class="tab-pane" id="documentesHelp" role="tabpanel" aria-labelledby="documentes-help-tab">Documents
+                Help</div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <button type="button" class="btn btn-block btn-default">Adviser</button>
+        </li>
+
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class=" di-ic_settings_24px"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <a href="#" class="dropdown-item dropdown-header">Welcome Username</a>
+
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fa fa-user mr-2"></i> Profile
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fa fa-suitcase mr-2"></i> Portfolios
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fa fa-file mr-2"></i> Factsheet
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+        </li>
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fa fa-sign-out"></i>
+          </a>
+
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+      <!-- Brand Logo -->
+      <!--  <a href="index3.html" class="brand-link">
+      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a> -->
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+
+            <li class="nav-item">
+              <a class="nav-link" data-widget="pushmenu" href="#">
+                <i class="nav-icon di-ic_dehaze_24px"></i>
+                <p style="font-size: 14px;font-weight: bold;"> Alexander Pierce</p>
+              </a>
+            </li>
+            <li class="nav-item" hidden>
+              <a href="#" class="nav-link name">
+                <i class="nav-icon fa fa-user"></i>
+                <p style="font-size: 14px;font-weight: bold;"> Alexander Pierce</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link  active">
+                <i class="nav-icon  di-ic_home_24px"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="activelist.html" class="nav-link  ">
+                <i class="nav-icon di-ic_search_24px"></i>
+                <p>Research Home</p>
+              </a>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="activelist.html" class="nav-link">
+                <i class="nav-icon fa fa-crosshairs"></i>
+                <p>Fund Research & Analysis
+                  <i class="fa fa-angle-right right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a target="blank"
+                    href="http://design.financialexpress.net/analytics-dashboard/pdf/Fund%20Research%20&%20Analysis.pdf">
+                    <p class="notify">What is available to me? <i class="nav-icon fa fa-book"></i></p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-filter"></i>
+                    <p>Fund Filter tool</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-table"></i>
+                    <p>Custom Table/Report Builder</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-newspaper-o"></i>
+                    <p>News & Research Page</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon di-ic_search_24px"></i>
+                    <p>Research & Insight</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-key"></i>
+                    <p>FE Invest Approved List</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-bell"></i>
+                    <p>Alert Manager</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-download"></i>
+                    <p>Bulk Code Importer</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="activelist.html" class="nav-link">
+                <i class="nav-icon fa fa-briefcase"></i>
+                <p>Portfolio Design & Creation
+                  <i class="fa fa-angle-right right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a target="blank"
+                    href="http://design.financialexpress.net/analytics-dashboard/pdf/Portfolio%20Design%20&%20Creation.pdf">
+                    <p class="notify">What is available to me? <i class="nav-icon fa fa-book"></i></p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-cogs"></i>
+                    <p>Portfolio</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-asterisk"></i>
+                    <p>Attitude to Risk Questionnaire</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-exchange"></i>
+                    <p>FE Transmission</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-key"></i>
+                    <p>FE Invest Models</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="activelist.html" class="nav-link">
+                <i class="nav-icon fa fa-file-text"></i>
+                <p>Portfolio Reporting
+                  <i class="fa fa-angle-right right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a target="blank"
+                    href="http://design.financialexpress.net/analytics-dashboard/pdf/Portfolio%20Reporting,%20Client%20Review%20and%20Winning%20New%20Business.pdf">
+                    <p class="notify">What is available to me? <i class="nav-icon fa fa-book"></i></p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-calculator"></i>
+                    <p>FE Calculator</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-money"></i>
+                    <p>Investment Forecaster</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-calculator"></i>
+                    <p>Investment Planner</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-calendar-check-o"></i>
+                    <p>Wealth Manager</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-megamenu" id="feinvest">
+              <span href="#" class="nav-link">
+                <i class="nav-icon fa fa-key"></i>
+                <p>FE Invest
+                  <i class="fa fa-angle-right right"></i>
+                </p>
+              </span>
+            </li>
+
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon  fa fa-black-tie"></i>
+                <p>Account Organisation
+                  <i class="fa fa-angle-right right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-cogs"></i>
+                    <p>Client Manager</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-asterisk"></i>
+                    <p>File Manager</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-exchange"></i>
+                    <p>Scheduler</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-key"></i>
+                    <p>View Queued Reports</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- has-megamenu" id="felearn" -->
+        <li class="nav-item has-treeview ">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-book"></i>
+            <p>Learn & Support
+              <i class="fa fa-angle-right right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-phone"></i>
+                <p>Contact Us</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-files-o"></i>
+                <p>Documentation</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-question-circle-o"></i>
+                <p>Frequently Asked Questions </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-calculator"></i>
+                <p>Glossary & Statistical Calculations</p>
+              </a>
+            </li>
+            <li class="nav-item has-megamenu" id="felearn">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-book"></i>
+                <p>Guides
+                <i class="fa fa-angle-right right"></i>
+              </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-certificate"></i>
+                <p>Training </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-file-video-o"></i>
+                <p>Videos</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-file-video-o"></i>
+                <p>FE Analytics Introduction Video</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-file-video-o"></i>
+                <p>Portfolio Builder Video </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-file-video-o"></i>
+                <p>Basic Research Video</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-file-video-o"></i>
+                <p>Advanced Research Video</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-video-camera"></i>
+                <p>Webinars</p>
+              </a>
+            </li>
+            </ul>
+        </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-user-circle"></i>
+                <p>Admin
+                  <i class="fa fa-angle-right right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-cogs"></i>
+                    <p>User Admin</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-asterisk"></i>
+                    <p>Group Admin</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-exchange"></i>
+                    <p>RQ Stats</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-key"></i>
+                    <p>Settings</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-key"></i>
+                    <p>Internal Report</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-key"></i>
+                    <p>Inspect Active List</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-key"></i>
+                    <p>Widget configuration</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon  fa fa-flag"></i>
+                <p>Legal
+                  <i class="fa fa-angle-right right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-cogs"></i>
+                    <p>3rd Party Disclaimers</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-cogs"></i>
+                    <p>Privacy & Cookie Policy</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-cogs"></i>
+                    <p>Terms & Conditions</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item ">
+              <a href="#" class="nav-link">
+                <i class="nav-icon  fa fa-flag"></i>
+                <p>Message Centre</p>
+              </a>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon  fa fa-flag"></i>
+                <p>Messaging Options
+                  <i class="fa fa-angle-right right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-cogs"></i>
+                    <p>Message Archive</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-cogs"></i>
+                    <p>Message Composer</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon di-ic_input_24px"></i>
+                <p>Logout</p>
+              </a>
+            </li>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <div id="wrapper">
+        <div class="title-header" style="position:relative; margin-top:100px; padding-bottom: 5px;">
+          <div class="dropdown">
+            <span>Your Dashboard</span>
+
+            <div class="dropdown add-new-widget" style="display:none">
+              <button type="button" class="btn btn-secondary btn-sm" data-toggle="dropdown"
+                aria-expanded="true"><span>Add New
+                  Widget</span><i class="di-ic_clear_24px"></i></button>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" x-placement="bottom-end">
+                <form role="form">
+                  <div class="card-body">
+                    <div class="form-group">
+                      <div class="available-btn">
+                        <div class="row">
+                          <label>Available</label>
+                        </div>
+                        <div class="row" id=avaiableBtns>
+                          <button type="button" class="btn btn-default" id="searchItems"><span>Search</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default"><span>Twitter Feed</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default"><span>Videos</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default"><span>MiFID 10% Drop Tracker</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default"><span>Sector Performance</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default"><span>Most Recent FAQ</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default"><span>Fund vs. Sector</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default"><span>Client Reviews</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default"><span>Instrument Perf Chart</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default"><span>Alert</span><i
+                              class="di-ic_clear_24px"></i></button>
+                        </div>
+                      </div>
+                      <div class="enabled-btn">
+                        <div class="row">
+                          <label>Enabled</label>
+                        </div>
+                        <div class="row" id="enabledBtn">
+                          <button type="button" class="btn btn-default disabled"><span>My Instruments</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default disabled"><span>My Portfolios</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default disabled"><span>What's New</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default disabled"><span>News & Research</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default disabled"><span>Pro Tip</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default disabled"><span>Risers and Fallers</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default disabled"><span>Most Viewed Instruments</span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default disabled"><span>Featured </span><i
+                              class="di-ic_clear_24px"></i></button>
+                          <button type="button" class="btn btn-default disabled"><span></span>Poll<i
+                              class="di-ic_clear_24px"></i></span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="content-footer">
+                      <button type="button" class="btn btn-tool"><i class=" di-ic_autorenew_24px"></i></button>
+                    </div>
+
+                  </div>
+                  <!-- /.card-body -->
+
+
+                </form>
+
+              </div>
+            </div>
+            <div class="dropdown add-new-widget">
+              <button type="button" class="btn btn-secondary btn-sm add-new-widget-alt-btn"><span>Add New
+                  Widget</span><i class="di-ic_clear_24px"></i></button>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right type2" x-placement="bottom-end">
+                <div class="menu-list">
+                  <div class="card-header">
+                    <h3 class="card-title">Add/Remove widgets</h3>
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool add-new-widget-alt-btn-close"><i
+                          class="di-ic_clear_24px"></i></button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="checkbox">
+                      <div>
+                        Search
+                        <input type="checkbox" id="searchItemcheck"  ><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        My Instruments
+                        <input type="checkbox" checked="checked"><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        MiFID 10% Drop Tracker
+                        <input type="checkbox" checked="checked"><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Sector Performance
+                        <input type="checkbox"  checked="checked"><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        My Portfolios
+                        <input type="checkbox" ><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Fund vs Sector
+                        <input type="checkbox" checked="checked"><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        News & Research
+                        <input type="checkbox"  ><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Instrument Perf Chart
+                        <input type="checkbox"  checked="checked"><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Alert
+                        <input type="checkbox"  checked="checked"><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Poll
+                        <input type="checkbox"  ><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Most Recent FAQ
+                        <input type="checkbox"  checked="checked"><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        What's New
+                        <input type="checkbox" ><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Client Reviews
+                        <input type="checkbox" checked="checked"><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Pro Tip
+                        <input type="checkbox"  ><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Risers and Fallers
+                        <input type="checkbox"   checked="checked"><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Most Viewed Instruments
+                        <input type="checkbox"  ><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Videos
+                        <input type="checkbox"  checked="checked"><label>a</label>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                      <div>
+                        Twitter Feed
+                        <input type="checkbox"  ><label>a</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content-footer">
+                    <button type="button" class="btn btn-tool"><i class=" di-ic_autorenew_24px"></i></button>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="row mt-4 widget-small-container">
+              <div class="col-lg-4   widget-small">
+                <!-- small box -->
+                <div class="small-box blue1 blue-alt-1 bg-white ">
+                  <div class="state-box">
+                    <div class="state-box-lt blue-alt-1">
+                      <div class="icon">
+                        <i class="ion ion-android-cart"></i>
+                      </div>
+                    </div>
+                    <div class="state-box-rt">
+                      <p><a href="activelist.html">My Basket</a> </p>
+                      <h3> <span class='numscroller' data-min='1' data-max='19' data-delay='5' data-increment='3'>0</span></h3>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4  widget-small">
+                <!-- small box -->
+                <div class="small-box blue1 blue-alt-2 bg-white ">
+                  <div class="state-box">
+                    <div class="state-box-lt blue-alt-2">
+                      <div class="icon">
+                        <i class="di-ic_work_24px"></i>
+                      </div>
+                    </div>
+                    <div class="state-box-rt">
+                      <p>My Portfolios</p>
+                      <h3><span class='numscroller' data-min='1' data-max='33' data-delay='5' data-increment='3'>0</span></h3>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4  widget-small">
+                <!-- small box -->
+                <div class="small-box blue1 blue-alt-3 bg-white ">
+                  <div class="state-box">
+                    <div class="state-box-lt blue-alt-3">
+                      <div class="icon">
+                        <i class="ion ion-bag"></i>
+                      </div>
+                    </div>
+                    <div class="state-box-rt">
+                      <p><a href="activelist.html">My Saved Lists</a></p>
+                      <h3><span class='numscroller' data-min='1' data-max='41' data-delay='5' data-increment='3'>0</span></h3>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4   widget-small">
+                <!-- small box -->
+                <div class="small-box blue1 blue-alt-4 bg-white ">
+                  <div class="state-box">
+                    <div class="state-box-lt blue-alt-4">
+                      <div class="icon">
+                        <i class="fa fa-pencil"></i>
+                      </div>
+                    </div>
+                    <div class="state-box-rt">
+                      <p>Custom Instruments</p>
+                      <h3><span class='numscroller' data-min='1' data-max='12' data-delay='5' data-increment='3'>0</span></h3>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4     widget-small">
+                <!-- small box -->
+                <div class="small-box blue1 blue-alt-5 bg-white ">
+                  <div class="state-box">
+                    <div class="state-box-lt blue-alt-5">
+                      <div class="icon">
+                        <i class="di-ic_view_list_24px"></i>
+                      </div>
+                    </div>
+                    <div class="state-box-rt">
+                      <p>My Saved Tables</p>
+                      <h3><span class='numscroller' data-min='1' data-max='16' data-delay='5' data-increment='3'>0</span></h3>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4  widget-small">
+                <!-- small box -->
+                <div class="small-box blue1 blue-alt-6 bg-white ">
+                  <div class="state-box">
+                    <div class="state-box-lt blue-alt-6">
+                      <div class="icon">
+                        <i class="di-ic_notifications_24px"></i>
+                      </div>
+                    </div>
+                    <div class="state-box-rt">
+                      <p>My Alerts</p>
+                      <h3><span class='numscroller' data-min='1' data-max='12' data-delay='5' data-increment='3'>0</span></h3>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div id="unusedItems" class="addTileList">
+          <!-- search widget -->
+         
+          <!-- my instruments -->
+          <div class="item instruments">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">My Instruments
+                  <div class="btn-group sorting">
+                    <button type="button" class="btn btn-default btn-sm"><i class=" di-ic_arrow_upward"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i
+                        class="di-ic_arrow_downward_-1"></i></button>
+                  </div>
+                </h3>
+                <div class="card-tools dropdown">
+                  <button type="button" class="btn btn-tool drag-it"><i class="di-ic_open_with_24px"></i></button>
+                  <button type="button" class="btn btn-tool" data-toggle="dropdown"><i
+                      class=" di-ic_settings_24px"></i></button>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                    <form role="form">
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label>Performance Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>1 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>3 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>6 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>1 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>2 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>5 y</b></button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Display Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>W</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>M</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Q</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Y</b></button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Options</label>
+                          <div class="checkbox">
+
+                            <span>
+                              <i class="di-ic_add_box_24px"></i>Add to My Active List<input type="checkbox"><label>a</label>
+                            </span>
+                          </div>
+                          <div class="checkbox">
+                            <span>
+                              <i class="fa fa fa-file-text"></i>View Factsheet <input type="checkbox"><label>a</label>
+                            </span>
+                          </div>
+                          <div class="checkbox">
+                            <span>
+                              <i class="di-ic_notifications_24px"></i>Manage Alerts <input
+                                type="checkbox"><label>a</label>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-default remove"><i
+                            class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                          WIDGET</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="card-body">
+                <div class="widget-tabs">
+
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="weekly" role="tabpanel" aria-labelledby="weekly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-5">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><a>BNY Mellon S&P 500 Index Tracker in GB</a> </td>
+                              <td class="text-md-center">11.57</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a>iShares Dow Jones Global Titans 50 UCITS ETF (DE) TR in GB</a></td>
+                              <td class="text-md-center">10.88</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a>iShares EURO STOXX 50 UCITS ETF (DE) TR in GB</a> </td>
+                              <td class="text-md-center">-2.36</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a>iShares EURO STOXX Select Dividend 30 UCITS ETF (DE) TR in GB</a> </td>
+                              <td class="text-md-center">-4.69</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a>iShares GiltTrak Index (IE) in GB</a> </td>
+                              <td class="text-md-center">4.00</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a>iShares NASDAQ-100 UCITS ETF (DE) TR in GB</a> </td>
+                              <td class="text-md-center">13.40</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a>iShares Nikkei 225 UCITS ETF (DE) TR in GB</a> </td>
+                              <td class="text-md-center">4.71</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="monthly" role="tabpanel" aria-labelledby="monthly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-5">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM AAP Moderately Adventurous... </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a title="7IM AAP Moderately Adventurous">7IM AAP Moderately Adventurous...</a></td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="quaterly" role="tabpanel" aria-labelledby="quaterly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-5">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM AAP Moderately Adventurous... </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a title="7IM AAP Moderately Adventurous">7IM AAP Moderately Adventurous...</a></td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="yearly" role="tabpanel" aria-labelledby="yearly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-5">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="more-btn mt-1">
+                  <a href="#">Show more</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- whats new -->
+          <div class="item what-s-new ">
+            <div class="card bg-info-gradient">
+              <div class="card-header ">
+                <div class="card-title">What's New</div>
+                <div class="card-tools dropdown">
+                  <button type="button" class="btn btn-tool drag-it"><i class="di-ic_open_with_24px"></i></button>
+                  <button type="button" class="btn btn-tool" data-toggle="dropdown"><i
+                      class=" di-ic_settings_24px"></i></button>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                    <form role="form">
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label>Performance Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>1 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>3 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>6 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>1 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>2 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>5 y</b></button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Display Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>W</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>M</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Q</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Y</b></button>
+                          </div>
+                        </div>
+
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-default remove"><i
+                            class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                          WIDGET</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+
+              </div>
+              <div class="card-body">
+                <div class="news-container">
+                  <div class="image-sec">
+                    <img src="./dist/img/whats-new.png" />
+                  </div>
+                  <div class="news-details">
+                    <p>Get a clear, transparent view of all pre-sale (ex ante) charges you need to disclose to clients
+                      under MiFID II regulation that can impact their investments</p>
+                    <div class="more-btn mt-1 compact">
+                      <a href="#">Try it now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+               <!-- My portfolios -->
+               <div class="item w2 my-portfolios">
+                <div class="card">
+                  <div class="portfolio-widget-tab-container">
+                    <div class="card-header">
+                      <h3 class="card-title">My Portfolios
+                        <div class="btn-group sorting">
+                          <button type="button" class="btn btn-default btn-sm"><i class=" di-ic_arrow_upward"></i></button>
+                          <button type="button" class="btn btn-default btn-sm"><i
+                              class="di-ic_arrow_downward_-1"></i></button>
+                        </div>
+                      </h3>
+    
+                    </div>
+                    <div class="card-body">
+                      <div class="widget-tabs">
+    
+    
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane fade show active" id="myPortfolioWeekly" role="tabpanel"
+                            aria-labelledby="weekly-tab">
+                            <div class="table-responsive">
+                              <table class="table mt-5">
+                                <thead>
+                                  <tr>
+                                    <th>Portfolio</th>
+                                    <th class="text-md-center">3 y (%)</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Alpha r2 Ethical 01/02/2019 TR in GB </td>
+                                    <td class="text-md-center">25.34</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>Amc_Change 01/08/2016 TR in GB
+                                    </td>
+                                    <td class="text-md-center">6.87
+                                    </td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>Diversification PF TR in GB
+                                    </td>
+                                    <td class="text-md-center">31.60</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>Model_Unit_2 11/09/2008 TR in GB
+                                    </td>
+                                    <td class="text-md-center">-38.07</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>Otrp 600 28/09/2015 TR in GB </td>
+                                    <td class="text-md-center">19.95</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>Thesis Collectives 1 of 7 20/11/2018 TR in GB
+                                    </td>
+                                    <td class="text-md-center">9.78</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>Av_Unit_2 11/09/2008 TR in GB
+                                    </td>
+                                    <td class="text-md-center">-38.07</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td><a title="7IM AAP Moderately Adventurous">Thesis Collectives 3 of 7 20/11/2018 TR in
+                                        GB
+                                      </a></td>
+                                    <td class="text-md-center">15.13</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+                            </div>
+    
+                          </div>
+                          <div class="tab-pane fade" id="myPortfolioMonthly" role="tabpanel" aria-labelledby="monthly-tab">
+                            <div class="table-responsive">
+                              <table class="table mt-5">
+                                <thead>
+                                  <tr>
+                                    <th>Portfolio</th>
+                                    <th class="text-md-center">3 y (%)</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>7IM AAP Moderately Adventurous... </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td><a title="7IM AAP Moderately Adventurous">7IM AAP Moderately Adventurous...</a></td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>7IM Balanced C Acc </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>7IM Balanced C Acc </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>7IM Balanced C Acc </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+    
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="myPortfolioQuaterly" role="tabpanel"
+                            aria-labelledby="quaterly-tab">
+                            <div class="table-responsive">
+                              <table class="table mt-5">
+                                <thead>
+                                  <tr>
+                                    <th>Portfolio</th>
+                                    <th class="text-md-center">3 y (%)</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>7IM AAP Moderately Adventurous... </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td><a title="7IM AAP Moderately Adventurous">7IM AAP Moderately Adventurous...</a></td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>7IM Balanced C Acc </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>7IM Balanced C Acc </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>7IM Balanced C Acc </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+    
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="tab-pane fade" id="myPortfolioYearly" role="tabpanel" aria-labelledby="yearly-tab">
+                            <div class="table-responsive">
+                              <table class="table mt-5">
+                                <thead>
+                                  <tr>
+                                    <th>Portfolio</th>
+                                    <th class="text-md-center">3 y (%)</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>7IM AAP Moderately Adventurous... </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td><a title="7IM AAP Moderately Adventurous">7IM AAP Moderately Adventurous...</a></td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>7IM Balanced C Acc </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>7IM Balanced C Acc </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+                                  <tr>
+                                    <td>7IM Balanced C Acc </td>
+                                    <td class="text-md-center">109.25</td>
+                                    <td> <i class="di-ic_remove_red_eye_24px"></i></td>
+    
+                                  </tr>
+    
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="more-btn mt-1">
+                        <a href="#">Show more</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="portfolio-chart-container">
+                    <div class="card-header">
+                      <h3 class="card-title">Portfolio Performance - Preview</h3>
+                      <div class="card-tools dropdown">
+                        <button type="button" class="btn btn-tool drag-it"><i class="di-ic_open_with_24px"></i></button>
+                        <button type="button" class="btn btn-tool" data-toggle="dropdown"><i
+                            class=" di-ic_settings_24px"></i></button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                          <form role="form">
+                            <div class="card-body">
+                              <div class="form-group">
+                                <label>Performance Period <i class="fa fa-question-circle-o"></i></label>
+                                <div class="performance-period-btn">
+                                  <button type="button" class="btn btn-default btn-sm"><b>1 m</b></button>
+                                  <button type="button" class="btn btn-default btn-sm"><b>3 m</b></button>
+                                  <button type="button" class="btn btn-default btn-sm"><b>6 m</b></button>
+                                  <button type="button" class="btn btn-default btn-sm"><b>1 y</b></button>
+                                  <button type="button" class="btn btn-default btn-sm"><b>2 y</b></button>
+                                  <button type="button" class="btn btn-default btn-sm"><b>5 y</b></button>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label>Display Period <i class="fa fa-question-circle-o"></i></label>
+                                <div class="performance-period-btn">
+                                  <button type="button" class="btn btn-default btn-sm"><b>W</b></button>
+                                  <button type="button" class="btn btn-default btn-sm"><b>M</b></button>
+                                  <button type="button" class="btn btn-default btn-sm"><b>Q</b></button>
+                                  <button type="button" class="btn btn-default btn-sm"><b>Y</b></button>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label>Graph Period <i class="fa fa-question-circle-o"></i></label>
+                                <div class="performance-period-btn">
+                                  <button type="button" class="btn btn-default btn-sm"><b>Cumulative</b></button>
+                                  <button type="button" class="btn btn-default btn-sm"><b>Annual</b></button>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- /.card-body -->
+    
+                            <div class="card-footer">
+                              <button type="submit" class="btn btn-default remove"><i
+                                  class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                                Widget</button>
+                            </div>
+                          </form>
+    
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="widget-tabs card-tools">
+    
+    
+                        <div class="">
+                          <div class="chart2 bg-success-gradient" id="line-chart"
+                            style="height: 200px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                            <img src="dist/img/chart/Group321.svg">
+                            <div class="morris-hover morris-default-style"
+                              style="left: 4.0156px; top: 112px; display: none;">
+                              <div class="morris-hover-row-label">2011 Q1</div>
+                              <div class="morris-hover-point" style="color: #efefef">
+                                Item 1:
+                                2,666
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+    
+                    </div>
+    
+    
+                  </div>
+                </div>
+    
+              </div>
+               <!-- research -->
+          <div class="item news-n-research">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">News and Research </h3>
+                <div class="card-tools dropdown">
+                  <button type="button" class="btn btn-tool drag-it"><i class="di-ic_open_with_24px"></i></button>
+                  <button type="button" class="btn btn-tool" data-toggle="dropdown"><i
+                      class=" di-ic_settings_24px"></i></button>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                    <form role="form">
+                      <div class="card-body">
+
+                        <div class="form-group">
+                          <label>Display Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>W</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>M</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Q</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Y</b></button>
+                          </div>
+                        </div>
+
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-default remove"><i
+                            class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                          WIDGET</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+              <div class="attachment-block clearfix">
+                <img class="attachment-img" src="./dist/img/news1.jpg" alt="">
+                <div class="attachment-pushed">
+                  <h6 class="attachment-heading"><a href="#">The specialist funds making positive returns year-in,
+                      year-out over the past decade</a></h6>
+                  <div class="attachment-text">PUBLISHED BY: Rob Langston
+                  </div>
+                  <div class="attachment-text">DATE: February 25, 2019
+                  </div>
+                  <span class="add-to"> <i class="di-ic_add_box_24px"></i></span>
+                </div>
+              </div>
+              <!-- <div class="attachment-less"> -->
+              <div class="attachment-block  small">
+                <img class="attachment-img" src="./dist/img/news2.jpg" alt="">
+                <div class="attachment-full">
+                  <h6 class="attachment-heading"><a href="#">Why Lloyds may not be the best bank for investors</a></h6>
+                  <div class="attachment-text">PUBLISHED BY: Anthony Luzio
+                  </div>
+                  <div class="attachment-text">DATE: February 22, 2019
+                  </div>
+                  <span class="add-to"> <i class="di-ic_add_box_24px"></i></span>
+                </div>
+              </div>
+
+              <div class="attachment-block  small">
+                <img class="attachment-img" src="./dist/img/photo2.png" alt="">
+                <div class="attachment-full">
+                  <h6 class="attachment-heading"><a href="#">Invesco’s Mark Barnett: Sticking by my process has been
+                      lonely at times</a></h6>
+                  <div class="attachment-text">PUBLISHED BY: Rob Langston
+                  </div>
+                  <div class="attachment-text">DATE: February 22, 2019
+                  </div>
+                  <span class="add-to"> <i class="di-ic_add_box_24px"></i></span>
+                </div>
+              </div>
+              <!-- </div> -->
+              <div class="more-btn mt-1">
+                <a href="#">Show more</a>
+              </div>
+            </div>
+          </div>
+          <!-- Most viewed instruments -->
+          <div class="item most-viewed-instruments">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Most Viewed Instruments
+                  <div class="btn-group sorting">
+                    <button type="button" class="btn btn-default btn-sm"><i class="di-ic_arrow_upward"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i
+                        class="di-ic_arrow_downward_-1"></i></button>
+
+                  </div>
+
+                </h3>
+                <div class="card-tools dropdown">
+                  <button type="button" class="btn btn-tool drag-it"><i class="di-ic_open_with_24px"></i></button>
+                  <button type="button" class="btn btn-tool" data-toggle="dropdown"><i
+                      class=" di-ic_settings_24px"></i></button>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                    <form role="form">
+                      <div class="card-body">
+                        <div class="form-group universe-select-dropdown">
+                          <label>Universe</label>
+                          <select id="drop2" name="drop2" class="form-control" style="width: 100%;">
+                            <option selected="selected">Investment Association</option>
+                            <option>Insurance</option>
+                            <option>Pention</option>
+                            <option>Investment Association ACC</option>
+                            <option>Oil</option>
+                            <option>Mutual Funds</option>
+                            <option>Pention</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label>Performance Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>1 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>3 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>6 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>1 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>2 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>5 y</b></button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Display Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>W</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>M</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Q</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Y</b></button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Options</label>
+                          <div class="checkbox">
+
+                            <span>
+                              <i class="di-ic_add_box_24px"></i>Add to My Active List<input type="checkbox"><label>a</label>
+                            </span>
+                          </div>
+                          <div class="checkbox">
+                            <span>
+                              <i class="fa fa fa-file-text"></i>View Factsheet <input type="checkbox"><label>a</label>
+                            </span>
+                          </div>
+                          <div class="checkbox">
+                            <span>
+                              <i class="di-ic_notifications_24px"></i>Manage Alerts <input
+                                type="checkbox"><label>a</label>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-default remove"><i
+                            class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                          WIDGET</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="widget-tabs">
+
+
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="myViewedInstrumentsWeekly" role="tabpanel"
+                      aria-labelledby="weekly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-5">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Newton Global Income Inst W Acc GBP
+                              </td>
+                              <td class="text-md-center">9.80%</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>Newton Asian Income Inst W Acc GBP</td>
+                              <td class="text-md-center">11.40%</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>Aberdeen Emerging Markets Equity I Acc
+                              </td>
+                              <td class="text-md-center">-4.20%</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>Invesco High Income (UK) Z Acc
+                              </td>
+                              <td class="text-md-center">1.10%</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>M&amp;G Strategic Corporate Bond I Acc GBP
+                              </td>
+                              <td class="text-md-center">0.10%</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>Invesco Monthly Income Plus (UK) Z Acc
+                              </td>
+                              <td class="text-md-center">-0.50%</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>M&amp;G Optimal Income Inst Acc GBP
+                              </td>
+                              <td class="text-md-center">-0.90%</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>JPM Natural Resources C Acc
+                              </td>
+                              <td class="text-md-center">4.50%</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="myViewedInstrumentsmonthly" role="tabpanel"
+                      aria-labelledby="monthly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-3">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM AAP Moderately Adventurous... </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a title="7IM AAP Moderately Adventurous">7IM AAP Moderately Adventurous...</a></td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="myViewedInstrumentsquaterly" role="tabpanel"
+                      aria-labelledby="quaterly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-3">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM AAP Moderately Adventurous... </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a title="7IM AAP Moderately Adventurous">7IM AAP Moderately Adventurous...</a></td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="myViewedInstrumentsyearly" role="tabpanel"
+                      aria-labelledby="yearly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-3">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="more-btn mt-1">
+                  <a href="#">Show more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+
+
+     
+         
+          <!-- top managers -->
+          <div class="item instruments">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Top Managers
+                  <div class="btn-group sorting">
+                    <button type="button" class="btn btn-default btn-sm"><i class=" di-ic_arrow_upward"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i
+                        class="di-ic_arrow_downward_-1"></i></button>
+                  </div>
+                </h3>
+                <div class="card-tools dropdown">
+                  <button type="button" class="btn btn-tool drag-it"><i class="di-ic_open_with_24px"></i></button>
+                  <button type="button" class="btn btn-tool" data-toggle="dropdown"><i
+                      class=" di-ic_settings_24px"></i></button>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                    <form role="form">
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label>Performance Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>1 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>3 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>6 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>1 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>2 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>5 y</b></button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Display Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>W</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>M</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Q</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Y</b></button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Options</label>
+                          <div class="checkbox">
+
+                            <span>
+                              <i class="di-ic_add_box_24px"></i>Add to My Active List<input type="checkbox"><label>a</label>
+                            </span>
+                          </div>
+                          <div class="checkbox">
+                            <span>
+                              <i class="fa fa fa-file-text"></i>View Factsheet <input type="checkbox"><label>a</label>
+                            </span>
+                          </div>
+                          <div class="checkbox">
+                            <span>
+                              <i class="di-ic_notifications_24px"></i>Manage Alerts <input
+                                type="checkbox"><label>a</label>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-default remove"><i
+                            class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                          WIDGET</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="widget-tabs">
+
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="weekly" role="tabpanel" aria-labelledby="weekly-tab">
+                      <div class="managers-container">
+                        <div class="manager-details">
+                          <div class="manager-photo">
+                            <img src="dist/img/Harry-Nimmo.jpg">
+                          </div>
+                          <div class="rating-details">
+                            <span class="manager-name">Harry Nimmo</span>
+                            <span class="manager-rating">
+                              <progress class="rating" max="100" value="73.5"></progress>
+                              <span class="rating-value">73.50 %</span>
+                            </span>
+
+                          </div>
+                        </div>
+                        <div class="manager-details">
+                          <div class="manager-photo">
+                            <img src="dist/img/James-Thomson.jpg">
+                          </div>
+                          <div class="rating-details">
+                            <span class="manager-name">James-Thomson</span>
+                            <span class="manager-rating">
+                              <progress class="rating" max="100" value="62.01"></progress>
+                              <span class="rating-value">62.01 %</span>
+                            </span>
+
+                          </div>
+                        </div>
+                        <div class="manager-details">
+                          <div class="manager-photo">
+                            <img src="dist/img/Mark-Barnett.jpg">
+                          </div>
+                          <div class="rating-details">
+                            <span class="manager-name">Mark Barnett</span>
+                            <span class="manager-rating">
+                              <progress class="rating" max="100" value="50.53"></progress>
+                              <span class="rating-value">50.53 %</span>
+                            </span>
+
+                          </div>
+                        </div>
+                        <div class="manager-details">
+                          <div class="manager-photo">
+                            <img src="dist/img/Richard-Pease.jpg">
+                          </div>
+                          <div class="rating-details">
+                            <span class="manager-name">Richard Pease</span>
+                            <span class="manager-rating">
+                              <progress class="rating" max="100" value="24.41"></progress>
+                              <span class="rating-value">24.41 %</span>
+                            </span>
+
+                          </div>
+                        </div>
+                        <div class="manager-details">
+                          <div class="manager-photo">
+                            <img src="dist/img/ALEXANDER-DARWALL.jpg">
+                          </div>
+                          <div class="rating-details">
+                            <span class="manager-name">Alexandar Darrwal</span>
+                            <span class="manager-rating">
+                              <progress class="rating" max="100" value="24.09"></progress>
+                              <span class="rating-value">24.09 %</span>
+                            </span>
+
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="monthly" role="tabpanel" aria-labelledby="monthly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-5">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM AAP Moderately Adventurous... </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a title="7IM AAP Moderately Adventurous">7IM AAP Moderately Adventurous...</a></td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="quaterly" role="tabpanel" aria-labelledby="quaterly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-5">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM AAP Moderately Adventurous... </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a title="7IM AAP Moderately Adventurous">7IM AAP Moderately Adventurous...</a></td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="yearly" role="tabpanel" aria-labelledby="yearly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-5">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="more-btn mt-1">
+                  <a href="#">Show more</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- risers and fallers -->
+
+          <div class="item riser-n-fallers">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Risers and Fallers
+                  <div class="btn-group sorting">
+                    <button type="button" class="btn btn-default btn-sm"><i class=" di-ic_arrow_upward"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i
+                        class="di-ic_arrow_downward_-1"></i></button>
+                  </div>
+                </h3>
+                <div class="card-tools dropdown">
+                  <button type="button" class="btn btn-tool drag-it"><i class="di-ic_open_with_24px"></i></button>
+                  <button type="button" class="btn btn-tool ~dropdown-open" data-toggle="dropdown"><i
+                      class=" di-ic_settings_24px"></i></button>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                    <form role="form">
+                      <div class="card-body">
+                        <div class="form-group universe-select-dropdown">
+                          <label for="drop1">Universe</label>
+
+                          <select id="drop1" name="drop1" class="form-group">
+                            <option>Investment Association</option>
+                            <option>Insurance</option>
+                            <option>Pention</option>
+                            <option>Investment Association ACC</option>
+                            <option>Oil</option>
+                            <option>Mutual Funds</option>
+                            <option>Pention</option>
+                          </select>
+
+                        </div>
+                        <div class="form-group">
+                          <label>Performance Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>1 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>3 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>6 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>1 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>2 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>5 y</b></button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Display Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>W</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>M</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Q</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Y</b></button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Options</label>
+                          <div class="checkbox">
+
+                            <span>
+                              <i class="di-ic_add_box_24px"></i>Add to My Active List<input type="checkbox"><label>a</label>
+                            </span>
+                          </div>
+                          <div class="checkbox">
+                            <span>
+                              <i class="di-ic_notifications_24px"></i>Manage Alerts <input
+                                type="checkbox"><label>a</label>
+                            </span>
+                          </div>
+                        </div>
+
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-default remove"><i
+                            class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                          WIDGET</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="widget-tabs">
+
+
+
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="raisersNFallersmyweekly" role="tabpanel"
+                      aria-labelledby="weekly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-5">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="3"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Polar Capital Healthcare Opportunities I GBP</td>
+                              <td class="text-md-center">25.4</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td> MFM Techinvest Technology A Acc </td>
+                              <td class="text-md-center">22.3</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>L&amp;G Global Real Estate Dividend Index I Acc </td>
+                              <td class="text-md-center">22.1</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>BMO Global Real Estate Securities 3 Acc </td>
+                              <td class="text-md-center">21.4</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>Artemis US Smaller Companies I Acc GBP</td>
+                              <td class="text-md-center">21.2</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>Janus Henderson Horizon Global Property Equities H2 Acc USD</td>
+                              <td class="text-md-center">21.2</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>iShares Global Property Securities Equity Index (UK) D Acc </td>
+                              <td class="text-md-center">20.9</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="raisersNFallersmyweekly" role="tabpanel"
+                      aria-labelledby="monthly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-3">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM AAP Moderately Adventurous... </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a title="7IM AAP Moderately Adventurous">7IM AAP Moderately Adventurous...</a></td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="raisersNFallersquaterly" role="tabpanel"
+                      aria-labelledby="quaterly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-3">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM AAP Moderately Adventurous... </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td><a title="7IM AAP Moderately Adventurous">7IM AAP Moderately Adventurous...</a></td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="raisersNFallersyearly" role="tabpanel" aria-labelledby="yearly-tab">
+                      <div class="table-responsive">
+                        <table class="table mt-3">
+                          <thead>
+                            <tr>
+                              <th>Instruments</th>
+                              <th class="text-md-center">1 y (%)</th>
+                              <th colspan="4"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+                            <tr>
+                              <td>7IM Balanced C Acc </td>
+                              <td class="text-md-center">109.25</td>
+                              <td> <i class="di-ic_add_box_24px"></i></td>
+                              <td> <i class="fa fa-file-text" aria-hidden="true"></i> </td>
+                              <td> <i class="di-ic_notifications_24px" aria-hidden="true"></i> </td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="more-btn mt-1">
+                  <a href="#">Show more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- featured -->
+          <div class="item height2 featured bg-new-gradient">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Featured </h3>
+                <div class="card-tools dropdown">
+                  <button type="button" class="btn btn-tool drag-it"><i class="di-ic_open_with_24px"></i></button>
+                  <button type="button" class="btn btn-tool" data-toggle="dropdown"><i
+                      class=" di-ic_settings_24px"></i></button>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                    <form role="form">
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label>Performance Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>1 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>3 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>6 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>1 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>2 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>5 y</b></button>
+                          </div>
+                        </div>
+
+
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-default remove"><i
+                            class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                          WIDGET</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="text-image-container">
+                  <div class="text-content">
+                    <h5>FE Analytics Training Schedule</h5>
+                    December 24, 2018 <br /> January 7, 2019
+
+
+                  </div>
+                  <div class="img-content">
+                    <i class="fa fa-graduation-cap" aria-hidden="true"
+                      style="    font-size: 105px !important; color: #dedede;"></i>
+                  </div>
+                </div>
+                <div class="more-btn mt-1 compact">
+                  <a href="#">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- poll -->
+          <div class="item height2 poll bg-new-gradient">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Poll </h3>
+                <div class="card-tools dropdown">
+                  <button type="button" class="btn btn-tool drag-it"><i class="di-ic_open_with_24px"></i></button>
+                  <button type="button" class="btn btn-tool" data-toggle="dropdown"><i
+                      class=" di-ic_settings_24px"></i></button>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                    <form role="form">
+                      <div class="card-body">
+
+                        <div class="form-group">
+                          <label>Display Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>W</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>M</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Q</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Y</b></button>
+                          </div>
+                        </div>
+
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-default remove"><i
+                            class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                          WIDGET</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="text-image-container">
+                  <div class="text-content">
+                    <h5>Do you like the new look for FE Analytics?</h5>
+                    <div class="form-group">
+                      <div class="checkbox">
+                        <label>
+                          <input type="radio">&nbsp; Yes</label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="radio">&nbsp; No</label>
+                      </div>
+                      <!-- <a href="javascript:void(0)" class="btn btn-sm btn-default float-right">Vote</a> -->
+
+
+                    </div>
+
+                  </div>
+                  <div class="img-content">
+                    <i class="di-ic_thumbs_up_down_24px" aria-hidden="true"
+                      style="    font-size: 105px !important; color: #dedede;"></i>
+                  </div>
+                </div>
+                <div class="more-btn mt-1 compact">
+                  <a href="#">Vote</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+              <!-- pro tip -->
+              <div class="item height2 pro-tip">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Pro Tip </h3>
+                    <div class="card-tools dropdown">
+                      <button type="button" class="btn btn-tool drag-it"><i class="di-ic_open_with_24px"></i></button>
+                      <button type="button" class="btn btn-tool" data-toggle="dropdown"><i
+                          class=" di-ic_settings_24px"></i></button>
+                      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                        <form role="form">
+                          <div class="card-body">
+                            <div class="form-group">
+                              <label>Performance Period <i class="fa fa-question-circle-o"></i></label>
+                              <div class="performance-period-btn">
+                                <button type="button" class="btn btn-default btn-sm"><b>1 m</b></button>
+                                <button type="button" class="btn btn-default btn-sm"><b>3 m</b></button>
+                                <button type="button" class="btn btn-default btn-sm"><b>6 m</b></button>
+                                <button type="button" class="btn btn-default btn-sm"><b>1 y</b></button>
+                                <button type="button" class="btn btn-default btn-sm"><b>2 y</b></button>
+                                <button type="button" class="btn btn-default btn-sm"><b>5 y</b></button>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label>Display Period <i class="fa fa-question-circle-o"></i></label>
+                              <div class="performance-period-btn">
+                                <button type="button" class="btn btn-default btn-sm"><b>W</b></button>
+                                <button type="button" class="btn btn-default btn-sm"><b>M</b></button>
+                                <button type="button" class="btn btn-default btn-sm"><b>Q</b></button>
+                                <button type="button" class="btn btn-default btn-sm"><b>Y</b></button>
+                              </div>
+                            </div>
+    
+                          </div>
+                          <!-- /.card-body -->
+    
+                          <div class="card-footer">
+                            <button type="submit" class="btn btn-default remove"><i
+                                class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                              WIDGET</button>
+                          </div>
+                        </form>
+    
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="text-image-container">
+                      <div class="img-content">
+                        <i class="fa"></i>
+                      </div>
+                      <div class="text-content">
+                        Did you know the FE analytics Correlation Table can help you measure and manage portfolio
+                        risk.
+    
+                      </div>
+    
+                    </div>
+                    <div class="text-image-container">
+                      <div class="img-content">
+                        <i class="fa"></i>
+                      </div>
+                      <div class="text-content">
+                        Did you know you could enable What If scenarios for performance line charts under Chart Options?
+                      </div>
+    
+                    </div>
+                    <div class="more-btn mt-1">
+                      <a href="#">Show more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+          <!-- transmission portfolio -->
+          <div class="item height2 most-transmission-portfolio">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Most Used Transmission Portfolio </h3>
+                <div class="card-tools dropdown">
+                  <button type="button" class="btn btn-tool drag-it"><i class="di-ic_open_with_24px"></i></button>
+                  <button type="button" class="btn btn-tool" data-toggle="dropdown"><i
+                      class=" di-ic_settings_24px"></i></button>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                    <form role="form">
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label>Performance Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>1 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>3 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>6 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>1 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>2 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>5 y</b></button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Display Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>W</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>M</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Q</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Y</b></button>
+                          </div>
+                        </div>
+
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-default remove"><i
+                            class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                          WIDGET</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+
+                <div class="text-image-container">
+                  <div class="img-content">
+                    <i class="  di-ic_work_24px"></i>
+                  </div>
+                  <div class="text-content">
+                    <h4>Balanced Risk Portfolio A</h4>
+                    <span class="percentage-text"><i class=" di-ic_arrow_upward" aria-hidden="true"></i>1.63%</span>
+                  </div>
+
+                </div>
+                <div class="text-image-container">
+                  <div class="img-content">
+                    <i class=" di-ic_work_24px"></i>
+                  </div>
+                  <div class="text-content">
+                    <h4>Balanced Risk Portfolio A Inc</h4>
+                    <span class="percentage-text"><i class=" di-ic_arrow_upward" aria-hidden="true"></i>1.21%</span>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+
+          <!-- twitter feeds -->
+          <div class="item twitter-feeds">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Twitter Feeds </h3>
+                <div class="card-tools dropdown">
+                  <button type="button" class="btn btn-tool" data-toggle="dropdown"><i
+                      class="di-ic_open_with_24px"></i></button>
+                  <button type="button" class="btn btn-tool" data-toggle="dropdown" style="color: #333333"><i
+                      class=" di-ic_settings_24px"></i></button>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                    <form role="form">
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-default remove"><i
+                            class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                          WIDGET</button>
+                      </div>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+              <div>
+                <a class="twitter-timeline" data-height="370" href="https://twitter.com/FE_Global?lang=en-gb">National
+                  Park Tweets - Curated tweets by TwitterDev</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
+            </div>
+          </div>
+
+
+          <div id="container"></div>
+        </div>
+      </div>
+    </div>
+    <!-- ./wrapper -->
+    <div class="change-theme">
+      <ul>
+        <li>
+          <span class="light" title="light theme">light</span>
+        </li>
+        <li>
+          <span class="dark" title="dark theme">dark</span>
+        </li>
+      </ul>
+    </div>
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Modal Heading</h4>
+            <button type="button" class="close" data-dismiss="modal" onClick="close_dialogbox()">&times;</button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <form class="">
+              <div class="change-fund-universe row">
+                <div class="col-md-4">
+                  <label><input type="radio" name="universe">Aberdeen Japan Equity Fund Inc</label>
+                </div>
+                <div class="col-md-4">
+                  <label><input type="radio" name="universe">Australia Mutual</label>
+                </div>
+                <div class="col-md-4">
+                  <label><input type="radio" name="universe">UT and OEICs</label>
+                </div>
+              </div>
+              <div class="change-fund-universe row">
+                <div class="col-md-4">
+                  <label><input type="radio" name="universe">Equities</label>
+                </div>
+                <div class="col-md-4">
+                  <label><input type="radio" name="universe">Germany Mutual</label>
+                </div>
+                <div class="col-md-4">
+                  <label><input type="radio" name="universe">Insurance</label>
+                </div>
+              </div>
+              <div class="change-fund-universe row">
+                <div class="col-md-4">
+                  <label><input type="radio" name="universe">New Zealand Managed Investment</label>
+                </div>
+                <div class="col-md-4">
+                  <label><input type="radio" name="universe">Australia Mutual</label>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal" onClick="close_dialogbox()">Add
+              Fund</button>
+            <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal" onClick="close_dialogbox()">Add
+              Fund & Sector</button>
+            <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal" onClick="close_dialogbox()">Add
+              Fund & Benchmark</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+   <!-- mega-menu -->
+   <div class="megamenu" data-id="feinvest">
+    <div class="mega-header">
+      <div class="mega-title">
+        <img src="dist/img/fe/1x/feInvest.png" alt="FE Invest" height="25">
+      </div>
+      <div class="title-sidelink">
+        <i class="nav-icon fa fa-cogs"></i>
+        <p>What is FE Invest?</p>
+      </div>
+    </div>
+    <div class="menu-content">
+      <!--col-->
+      <div class="menu-col col-1">
+        <div class="mega-col-title">
+          Funds
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-archive"></i>
+              <p>Fund Archive</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-file-text-o"></i>
+              <p>Governance Reports</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-check-circle"></i>
+              <p>FE Invest Approved List</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--col-->
+      <div class="menu-col col-2">
+        <div class="mega-col-title">
+          Portfolios
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-files-o"></i>
+              <p>Portfolio Reports</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-file-text-o"></i>
+              <p>Portfolio Review</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--col-->
+      <div class="menu-col col-1">
+        <div class="mega-col-title">
+          Supplementary
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-pencil-square"></i>
+              <p>Biannual Reviews</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-commenting"></i>
+              <p>Market Commentary Documents</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-bookmark-o"></i>
+              <p>Market Outlook Quarterly Reviews</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--col-->
+      <div class="menu-col col-1">
+        <div class="mega-col-title">
+          Methodology
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-fort-awesome"></i>
+              <p>Governance</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-folder-open"></i>
+              <p>Portfolios</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-file-text-o"></i>
+              <p>Reports</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-check-circle"></i>
+              <p>FE Invest Approved List</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-sitemap"></i>
+              <p>Finametrica Mapping-Active</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-sitemap"></i>
+              <p>Finametrica Mapping-Hybrid</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--col-->
+    </div>
+  </div>
+  <!-- mega-menu -->
+ <!-- mega-menu -->
+ <div class="megamenu" data-id="felearn">
+  <div class="mega-header">
+    <div class="mega-title">
+      <img src="dist/img/fe/1x/feGuides.png" alt="FE Guides" height="25">
+    </div>
+    <div class="title-sidelink">
+      <!-- link -->
+    </div>
+  </div>
+  <div class="menu-content">
+    <!--col-->
+    <div class="menu-col col-1">
+      <div class="mega-col-title">
+        Guides to FE Ratings
+      </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-user"></i>
+            <p>FE Alpha Manager</p>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-star"></i>
+              <p>FE Crown Rating</p>
+            </a>
+          </li>
+          <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-signal "></i>
+                <p>FE Risk Score</p>
+              </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-star-o"></i>
+                  <p>FE Passive Fund Ratings</p>
+                </a>
+              </li>
+
+      </ul>
+    </div>
+    <!--col-->
+    <div class="menu-col col-2">
+      <div class="mega-col-title">
+        User Guides
+      </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-book"></i>
+            <p>Getting Started</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-question-circle-o"></i>
+            <p>How to Build a Portfolio</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-cogs"></i>
+            <p>Portfolio Settings</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--col-->
+    <div class="menu-col col-2">
+      <div class="mega-col-title">
+        All Other Guides
+      </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-book"></i>
+            <p>View All Chart Guides</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-book"></i>
+            <p>View All Table Guides</p>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>View All Report Guides</p>
+            </a>
+          </li>
+          <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-book"></i>
+                <p>View All Tool Guides</p>
+              </a>
+            </li>
+      </ul>
+    </div>
+    <!--col-->
+     
+  </div>
+</div>
+  <!-- mega-menu -->
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+
+
+
+
+    <!-- SlimScroll 1.3.0 -->
+    <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- PAGE SCRIPTS -->
+    <script src="dist/js/pages/dashboard2.js"></script>
+    <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+    <script src='https://unpkg.com/packery@2/dist/packery.pkgd.js'></script>
+    <script src='https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="dist/js/numscroller.js"></script>
+
+    <script>
+
+      $(document).ready(function () {
+
+        // redirect to small screen
+        function redirectTo(){
+        $width = $(window).width();
+        if($width > 1440){
+          window.location.replace("http://design.financialexpress.net/analytics-dashboard/03/1920/");
+        }
+      }
+
+      redirectTo();
+      
+      $(window).resize(function(){
+        redirectTo();  
+      })
+        // 
+
+        $('.search-result-dropdown').hide();
+        $('.input-group').on('click', function (e) {
+          e.stopPropagation();
+          $('.search-result-dropdown').show();
+        });
+        $('.close-pane').on('click', function (e) {
+          e.stopPropagation();
+          $('.search-result-dropdown').hide();
+        });
+
+        $('.form-control-navbar').on('keyup', function () {
+          $('.search-result-dropdown').show();
+        });
+
+        $(document).click(function (e) {
+          if (!$(e.target).is('.modal, .modal *, .search-result-dropdown, .search-result-dropdown *, .input-group-append')) {
+            $(".search-result-dropdown").hide();
+          }
+        });
+
+        $('#drop1').select2();
+        $('#unilist').select2();
+        $('#drop2').select2();
+      });
+
+      function gridDrag(){
+        var $grid = $('.addTileList').packery({
+            itemSelector: '.item',
+            columnWidth: 450,
+            gutter: 20
+        });
+        $grid.find('.item').each(function (i, gridItem) {
+            var draggie = new Draggabilly(gridItem);
+            // bind drag events to Packery
+            $grid.packery('bindDraggabillyEvents', draggie);
+        });
+      
+
+        $grid.on('layoutComplete', orderItems);
+        $grid.on('dragItemPositioned', orderItems);
+
+        }
+      var dragging = false;
+      $(document).ready(function () {
+        
+        gridDrag();
+
+      });
+      
+      // function delectSerch() {
+      //   $('#searchItems').appendTo("#avaiableBtns");
+      //   $('#searchItems').removeClass('disabled');
+      // }
+      $('#searchItems').click(function(){
+        // if($('#avaiableBtns').has(this)){
+        //   var item=this;
+        //   item.remove();
+        //   $('#enabledBtn').append(item);
+        // }
+        // if($('#enabledBtn').has(this)){
+        //   var sitem=this;
+        //   sitem.remove();
+        //   $('#avaiableBtns').append(sitem);
+        //   $(this).removeClass('disabled');
+        // }
+      })
+      var items = ` <div class="item height2 search-item bg-new-gradient2">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Search for instruments</h3>
+                <div class="card-tools dropdown">
+                    <button type="button" class="btn btn-tool drag-it"  ><i class="di-ic_open_with_24px"></i></button>
+                  <button type="button" class="btn btn-tool" data-toggle="dropdown"><i class=" di-ic_settings_24px"></i></button>
+                  <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right tools-container">
+                    <form role="form">
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label>Performance Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>1 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>3 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>6 m</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>1 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>2 y</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>5 y</b></button>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label>Display Period <i class="fa fa-question-circle-o"></i></label>
+                          <div class="performance-period-btn">
+                            <button type="button" class="btn btn-default btn-sm"><b>W</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>M</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Q</b></button>
+                            <button type="button" class="btn btn-default btn-sm"><b>Y</b></button>
+                          </div>
+                        </div>
+                         
+                      </div>
+                      <!-- /.card-body -->
+
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-default remove"><i class="di-ic_delete_24px"></i>&nbsp;&nbsp;DELETE
+                          WIDGET</button>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                  <div class="instrument-search-container-alt-alt">
+								<input type="text" class="form-control instrument-search-box-alt">
+                            <div class="btn btn-navbar instrument-search-alt"> <i class="fa fa-search"></i> </div>
+							</div>
+              </div>
+
+            </div>
+          </div>`;
+          $("#searchItemcheck").prop('checked',true);
+          $("#searchItemcheck").click(function(){
+            
+            if (!$(this).prop('checked')) {
+              var $items = $(items);
+              $('.addTileList').prepend($items).packery('prepended', $items);
+              $('.addTileList').packery('destroy');
+              gridDrag();
+            } else {
+              $(document).find('.search-item').remove();
+              $('.addTileList').packery('destroy');
+               gridDrag();
+            }
+        });
+        $('.remove').click(function(){
+          // $(document).find('.search-item').remove();
+          //     $('.addTileList').packery('destroy');
+          //      gridDrag();
+          $("#searchItemcheck").prop('checked',true);
+          $(this).closest('.item').remove();
+              $('.addTileList').packery('destroy');
+               gridDrag();
+        })
+      // Load the items from the unusedItems list into the container
+      // function loadItems() {
+      //   var $container = $('#container');
+      //   var $unusedItems = $('#unusedItems');
+
+      //   // Load from local storage
+      //   var data = getLocalStorage('itemData')
+      //   if (data != null && data.length > 0) {
+      //     var itemData = JSON.parse(data);
+      //     $.each(itemData, function (i, item) {
+      //       $unusedItems.find('.' + item.class).detach().appendTo($container);
+      //     });
+
+      //   } else {
+      //     $unusedItems.find('.item').each(function (i, item) {
+      //       $(item).detach().appendTo($container);
+      //     });
+      //   }
+      // }
+
+
+      // function makeItemsDraggable() {
+      //   var $container = $('#container');
+      //   $items = $container.find('.item');
+      //   $items.draggable({
+      //     zIndex: 100,
+      //     cursor: 'move',
+      //     start: function (event, ui) {
+      //       $guide = $('<div class="item ui-draggable-guide"></div>');
+      //       $guide
+      //         .css('position', 'absolute')
+      //         .css('left', ui.originalPosition.left)
+      //         .css('top', ui.originalPosition.top);
+      //       if ($(ui.helper).hasClass('h2'))
+      //         $guide.addClass('h2');
+      //       if ($(ui.helper).hasClass('w2'))
+      //         $guide.addClass('w2');
+      //       $container.append($guide);
+      //       dragging = true;
+      //     },
+
+      //     // Remove the guide element
+      //     stop: function () {
+      //       $('.ui-draggable-guide').remove();
+      //       dragging = false;
+      //     }
+      //   });
+
+      //   // Bind events with packery
+      //   $container.packery('bindUIDraggableEvents', $items);
+      // }
+
+      // Place the items in the container into local storage
+
+
+      function setLocalStorage(item, value) {
+
+      }
+      function getLocalStorage(item) {
+
+      }
+      //  tabs
+      $('.content-wrapper').find('.nav-link').click(function () {
+        var tab_id = $(this).attr('href');
+
+        $('.search-result-dropdown').find('.nav-link').removeClass('active');
+        $('.search-result-dropdown').find('.tab-pane').removeClass('active');
+
+        $(this).addClass('active');
+        $(tab_id).addClass('active');
+      })
+      $('.search-result-dropdown').find('.nav-link').click(function (e) {
+        var tab_id = $(this).attr('href');
+
+        $(this).parent().parent().find('.nav-link').removeClass('active');
+        $(this).parent().parent().parent().find('.tab-pane').removeClass('active');
+
+        $(this).addClass('active');
+        $(tab_id).addClass('active');
+
+      })
+
+      $('.dropdown-toggle').click(function () {
+        var hasclass = $(this).siblings().hasClass('show');
+        //		console.log(hasclass);
+        $(this).parents('#funds').find('.dropdown-menu').removeClass('show');
+        if (hasclass == false) {
+          $(this).siblings('.dropdown-menu').addClass('show');
+        }
+        else {
+          $(this).siblings('.dropdown-menu').removeClass('show');
+        }
+      })
+
+      $('.close_dropdown').click(function () {
+        $(this).parents('.dropdown-menu').removeClass('show');
+      })
+
+
+
+      // $(document).click(function (e) {
+      //   var hasclass = $('.dropdown-menu').hasClass('show');
+      //   console.log(hasclass);
+      //   if(hasclass != false){
+      //     $('.dropdown-menu').removeClass('show');
+      //   }
+      // });
+
+      // $('.dropdown-open').click(function(){
+      //   $(this).siblings('.dropdown-menu').toggleClass('show');
+      // });
+
+      $('.select2-search--dropdown').click(function () {
+        console.log(twest);
+        $('.dropdown-menu.show').addClass('show');
+      })
+
+
+
+
+      // radial chart
+
+      var forEach = function (array, callback, scope) {
+        for (var i = 0; i < array.length; i++) {
+          callback.call(scope, i, array[i]);
+        }
+      };
+      window.onload = function () {
+        var max = -219.99078369140625;
+        forEach(document.querySelectorAll('.progress'), function (index, value) {
+          percent = value.getAttribute('data-progress');
+          value.querySelector('.fill').setAttribute('style', 'stroke-dashoffset: ' + ((100 - percent) / 100) * max);
+          value.querySelector('.value').innerHTML = percent + '%';
+        });
+      }
+
+      //		dialog box styles
+      $('.dropdown-item.open_dialogbox').click(function () {
+        $('#myModal').fadeIn();
+        var fundname = $(this).data('name');
+        $('#myModal').find('.modal-title').text(fundname);
+      })
+      //dialog box close styles
+      function close_dialogbox() {
+        $('#myModal').fadeOut();
+        $('.dropdown-menu').removeClass('show');
+      }
+
+      $('.add-new-widget-alt-btn').click(function () {
+        $(this).siblings('.dropdown-menu').toggleClass('show');
+      })
+      $('.add-new-widget-alt-btn-close').click(function () {
+        $(this).parents('.dropdown-menu').removeClass('show');
+      })
+
+
+      $('.nav-sidebar > .nav-item').click(function () {
+        $('.megamenu').hide();
+        $('.has-megamenu').removeClass('megamenu-open');
+        $('.megamenu').removeClass('show');
+        if ($(this).siblings('.nav-item').hasClass('menu-open')) {
+          $('.nav-sidebar > .nav-item').removeClass('menu-open').find('.nav-treeview').hide();
+        }
+      })
+      $('.nav-sidebar .sub-nav').click(function () {
+        console.log($(this).siblings('.nav-item').hasClass('menu-open'));
+        var hassubnav = $(this).siblings('.nav-item').hasClass('menu-open');
+        if (hassubnav != false) {
+          $(this).siblings().removeClass('menu-open').find('.nav-treeview').hide();
+        }
+        // if($(this).siblings('.nav-item').hasClass('menu-open')){
+        //   $('.nav-sidebar > .nav-item.sub-nav').removeClass('menu-open').find('.nav-treeview').hide();
+        // }
+      })
+      $('.megamenu').hide();
+
+$('.has-megamenu').click(function (e) {
+  $('.sidebar-mini').addClass('sidebar-open').removeClass('sidebar-collapse');
+  $('.has-megamenu').removeClass('megamenu-open');
+  setTimeout(()=>{
+    $(this).addClass('megamenu-open');
+    var menuId = $(this).attr('id');
+    // console.log($(this).offset(),$('.megamenu[data-id='+menuId+']').offset());
+    var org = $(this).offset();
+    $('.megamenu[data-id=' + menuId + ']').toggle();
+    $('.megamenu[data-id=' + menuId + ']').addClass('show');
+    $('.megamenu[data-id=' + menuId + ']').offset({ top: org.top, left: org.left + 285 });
+   
+  },100)
+});
+ 
+  $('.sidebar').scroll(function(){
+    var org = $('.megamenu-open').offset();
+    var menuId = $('.megamenu-open').attr('id');
+    $('.megamenu[data-id=' + menuId + ']').offset({ top: org.top, left: org.left + 285 });
+  });
+ 
+$(document).click(function (e) {
+  if (!$(e.target).is('.nav-item, .nav-item *, .megamenu, .megamenu *')) {
+    $('.megamenu').hide();
+    $('.has-megamenu').removeClass('megamenu-open');
+    $('.megamenu').removeClass('show');
+  }
+});
+    </script>
+
+
+
+</body>
+
+
+</html>

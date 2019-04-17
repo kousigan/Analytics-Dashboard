@@ -1,0 +1,2641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5LLBR8Z');</script>
+    <!-- End Google Tag Manager -->
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"  >
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Active list pro</title>
+
+
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="plugins/Dashicons/css/dashicons_style.css">
+
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css"
+    rel="stylesheet">
+  <link rel="stylesheet" href="plugins/bootstrap-slider/slider.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.4.8/collection/icon/icon.css" rel="stylesheet" />
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte_1.css">
+  <style>
+    body{
+      /* width:1280px; */
+    }
+    .wrapper{
+      /* width:1366px;
+      background: #aaa; */
+    }
+    #container {
+      margin-top: 100px;
+      width: 100%;
+    }
+
+    #wrapper {
+      width: 920px;
+      margin: 0 auto;
+      overflow-x: hidden;
+    }
+
+    /* Switch to 4 column layout if the screen is wide enough narrow */
+    @media only screen and (min-width: 1570px) {}
+
+    .car-list {
+      width: 455px;
+
+      margin-right: 10px;
+    }
+
+    .car-container {
+      width: 90%;
+    }
+
+    li.chart-tabs {
+      overflow: visible !important;
+      width: auto !important;
+      height: auto !important;
+    }
+
+    /*
+    .button-group{
+      display: table;
+      width:95%;
+      padding: 10px;
+    }
+*/
+    /*
+.btn-half {
+    width: 50%;
+    display: table-cell;
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+}
+*/
+    /*
+.btn-half:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.btn-half:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+*/
+    .info-round {
+      height: 27px;
+      width: 27px;
+      border-radius: 15px;
+      display: inline-block;
+      background: white;
+      color: #333;
+      margin-right: 10px;
+    }
+
+    /*
+.categories .select2-container--default .select2-selection--single {
+    background-color: #e0e0e0;
+    border: 0 !important;
+    border-radius: 7px !important;
+    padding: 10px 9px;
+    height: 35px !important;
+}
+.categories .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 35px;
+    position: absolute;
+    top: 1px;
+    right: 4px;
+    width: 20px;
+}
+*/
+    /*
+.arrow-group {
+    position: fixed;
+    left: 100px;
+    right: 100px;
+    bottom: 200px;
+    z-index: 0;
+}
+*/
+    /*
+.arrow-group .arrow {
+    border: none;
+    cursor: pointer;
+	background-color: #26c6da;
+    border-radius: 4px;
+    width: 40px;
+    text-align: center;
+}
+.arrow-group .arrow.disabled-btn {
+    display: none;
+}
+.arrow-group .arrow .fa {
+    font-size: 50px !important;
+    color: #fff;
+}
+.arrow-group .arrow-right {
+    float: right;
+}
+.link-group {
+    position: absolute;
+    top: 77px;
+    right: 50px;
+}
+*/
+  </style>
+</head>
+
+<body class="hold-transition sidebar-mini sidebar-open new-activelist">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LLBR8Z"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <div class="wrapper research">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom fixed-top ">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="fe-logo"> <a><img src="./dist/img/fe/FE_Analytics.svg" /></a> </li>
+        <li class="cl-logo"  > <a><img src="./dist/img/fe/wp-logo.png" /></a> </li>
+      </ul>
+      <!-- SEARCH FORM -->
+      <form class="form-inline ml-3 header-search">
+        <div class="input-group input-group-sm">
+          <input class="form-control form-control-navbar" type="search" placeholder="Search for funds, reports or help"
+            aria-label="Search">
+          <div class="input-group-append dropdown">
+            <div class="btn btn-navbar">
+              <i class="fa fa-search"></i>
+            </div>
+          </div>
+          <div class="search-result-dropdown" style="display:none">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#funds" role="tab" aria-controls="home"
+                  aria-selected="true">Funds (20)</a>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#equities" role="tab"
+                  aria-controls="profile" aria-selected="false">Equities (20)</a>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link" id="messages-tab" data-toggle="tab" href="#modelPortfolios" role="tab"
+                  aria-controls="messages" aria-selected="false">Model Portfolios (1)</a>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link" id="settings-tab" data-toggle="tab" href="#marketIndices" role="tab"
+                  aria-controls="settings" aria-selected="false">Market Indices (20)</a>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link" id="settings-tab" data-toggle="tab" href="#sectors" role="tab"
+                  aria-controls="settings" aria-selected="false">Sectors (22)</a>
+              </li>
+              <li class="nav-item" hidden>
+                <a class="nav-link" id="settings-tab" data-toggle="tab" href="#restricted" role="tab"
+                  aria-controls="settings" aria-selected="false">Restricted (2)</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link help-tab" id="settings-tab" data-toggle="tab" href="#documentesHelp" role="tab"
+                  aria-controls="settings" aria-selected="false">Documents & Help</a>
+              </li>
+            </ul>
+            <div class="tab-content search-results-drop">
+              <div class="tab-pane active" id="funds" role="tabpanel" aria-labelledby="home-tab">
+                <div class="card-body p-0">
+                  <h5>Fund Results</h5>
+                  <div class="form-group universe-select-dropdown fund-results">
+                    <div class="label">
+                      <label for="riser">Fund from</label>
+                    </div>
+                    <div>
+                      <select id="unilist" name="unilist" class="form-control select2-hidden-accessible"
+                        classname="DropDownListMediumLarge" data-select2-id="unilist" tabindex="-1" aria-hidden="true">
+
+                        <option>ABI Insurance</option>
+                        <option>ABI Pensions</option>
+                        <option>AIC Investment Companies</option>
+                        <option>FE-Rated Passive Investments</option>
+                        <option>Insurance</option>
+                        <option>Investment Association</option>
+                        <option>LSE Equities</option>
+                        <option>Multi-manager</option>
+                        <option>Mutual</option>
+                        <option>Pension</option>
+                        <option>Retail UT and OEICs</option>
+                        <option>UT and OEICs</option>
+                      </select>
+                    </div>
+                  </div>
+                  <table class="table">
+                    <tr>
+                      <td>Aberdeen Japan Equity Fund Inc</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Japan Investment Trust PLC Ord 10p</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>AIC Investment Companies</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Standard Asia Focus Plc Ord 25p</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Latin American Income Ltd Ord</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Japan Investment Trust PLC Ord 10p</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Latin American Income Ltd Ord</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Standard Asia Focus Plc Ord 25p</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen Emerging Markets Investment Company Limited Ord 1p NPV</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Aberdeen New Dawn Investment Trust PLC Ord 5p</td>
+                      <td class="text-md-right">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-info">Add</button>
+                          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                            <!-- <span class="caret"></span> -->
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            <span class="sr-only">Toggle Dropdown</span>
+                          </button>
+                          <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Sector</a>
+                            <a class="dropdown-item close_dropdown" href="#">Add Fund & Benchmark</a>
+                            <a class="dropdown-item open_dialogbox" href="#"
+                              data-name="Aberdeen Japan Equity Fund Inc">Change Fund Universe</a>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="row align-items-center">
+                  <div class="pagination paginate"> 
+                    <span class="pages-label">Pages</span>
+                    <a class="goto go-prev"><i class="fa fa-angle-left"></i></a>
+                    <span class="current-page">
+                      <input type="text" value="1">
+                    </span>
+                    <span class="slash">/</span>
+                    <span class="total-pages">3</span>
+                    <a class="goto go-next"><i class="fa fa-angle-right"></i></a>
+               </div>
+                  <div>
+                    <a class="close-pane btn btn-secondary btn-sm" href="#"><span>Close</span><span
+                        class="ion-android-close active"></span></a>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="equities" role="tabpanel" aria-labelledby="equities-tab">Equities</div>
+              <div class="tab-pane" id="portfolios" role="tabpanel" aria-labelledby="portfolios-tab">portfolios</div>
+              <div class="tab-pane" id="modelPortfolios" role="tabpanel" aria-labelledby="model-portfolios-tab">Model
+                Portfolios</div>
+              <div class="tab-pane" id="marketIndices" role="tabpanel" aria-labelledby="market-indices-tab">Market
+                Indices</div>
+              <div class="tab-pane" id="sectors" role="tabpanel" aria-labelledby="sectors-tab">Sectors</div>
+              <div class="tab-pane" id="restricted" role="tabpanel" aria-labelledby="restricted-tab">Restricted</div>
+              <div class="tab-pane" id="documentesHelp" role="tabpanel" aria-labelledby="documentes-help-tab">Documents
+                Help</div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <button type="button" class="btn btn-block btn-default">Adviser</button>
+        </li>
+
+        <!-- Messages Dropdown Menu -->
+        <li class="nav-item dropdown"> <a class="nav-link" data-toggle="dropdown" href="#"> <i class="fa fa-cog"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right"> <a href="#"
+              class="dropdown-item dropdown-header">Welcome Username</a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item"> <i class="fa fa-user mr-2"></i> Profile </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item"> <i class="fa fa-suitcase mr-2"></i> Portfolios </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item"> <i class="fa fa-file mr-2"></i> Factsheet </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+          </div>
+        </li>
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown"> <a class="nav-link" data-toggle="dropdown" href="#"> <i
+              class="fa fa-sign-out"></i> </a> </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+   <!-- Main Sidebar Container -->
+   <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+    <!-- Brand Logo -->
+    <!--  <a href="index3.html" class="brand-link">
+    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+         style="opacity: .8">
+    <span class="brand-text font-weight-light">AdminLTE 3</span>
+  </a> -->
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#">
+              <i class="nav-icon di-ic_dehaze_24px"></i>
+              <p style="font-size: 14px;font-weight: bold;"> Alexander Pierce</p>
+            </a>
+          </li>
+          <li class="nav-item" hidden>
+            <a href="#" class="nav-link name">
+              <i class="nav-icon fa fa-user"></i>
+              <p style="font-size: 14px;font-weight: bold;"> Alexander Pierce</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html" class="nav-link  ">
+              <i class="nav-icon  di-ic_home_24px"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="activelist.html" class="nav-link active ">
+              <i class="nav-icon di-ic_search_24px"></i>
+              <p>Research Home</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="activelist.html" class="nav-link">
+              <i class="nav-icon fa fa-crosshairs"></i>
+              <p>Fund Research & Analysis
+                <i class="fa fa-angle-right right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a target="blank"
+                  href="http://design.financialexpress.net/analytics-dashboard/pdf/Fund%20Research%20&%20Analysis.pdf">
+                  <p class="notify">What is available to me? <i class="nav-icon fa fa-book"></i></p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-filter"></i>
+                  <p>Fund Filter tool</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-table"></i>
+                  <p>Custom Table/Report Builder</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-newspaper-o"></i>
+                  <p>News & Research Page</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon di-ic_search_24px"></i>
+                  <p>Research & Insight</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-key"></i>
+                  <p>FE Invest Approved List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-bell"></i>
+                  <p>Alert Manager</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-download"></i>
+                  <p>Bulk Code Importer</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="activelist.html" class="nav-link">
+              <i class="nav-icon fa fa-briefcase"></i>
+              <p>Portfolio Design & Creation
+                <i class="fa fa-angle-right right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a target="blank"
+                  href="http://design.financialexpress.net/analytics-dashboard/pdf/Portfolio%20Design%20&%20Creation.pdf">
+                  <p class="notify">What is available to me? <i class="nav-icon fa fa-book"></i></p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-cogs"></i>
+                  <p>Portfolio</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-asterisk"></i>
+                  <p>Attitude to Risk Questionnaire</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-exchange"></i>
+                  <p>FE Transmission</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-key"></i>
+                  <p>FE Invest Models</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="activelist.html" class="nav-link">
+              <i class="nav-icon fa fa-file-text"></i>
+              <p>Portfolio Reporting
+                <i class="fa fa-angle-right right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a target="blank"
+                  href="http://design.financialexpress.net/analytics-dashboard/pdf/Portfolio%20Reporting,%20Client%20Review%20and%20Winning%20New%20Business.pdf">
+                  <p class="notify">What is available to me? <i class="nav-icon fa fa-book"></i></p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-calculator"></i>
+                  <p>FE Calculator</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-money"></i>
+                  <p>Investment Forecaster</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-calculator"></i>
+                  <p>Investment Planner</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-calendar-check-o"></i>
+                  <p>Wealth Manager</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-megamenu" id="feinvest">
+            <span href="#" class="nav-link">
+              <i class="nav-icon fa fa-key"></i>
+              <p>FE Invest
+                <i class="fa fa-angle-right right"></i>
+              </p>
+            </span>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon  fa fa-black-tie"></i>
+              <p>Account Organisation
+                <i class="fa fa-angle-right right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-cogs"></i>
+                  <p>Client Manager</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-asterisk"></i>
+                  <p>File Manager</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-exchange"></i>
+                  <p>Scheduler</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-key"></i>
+                  <p>View Queued Reports</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- has-megamenu" id="felearn" -->
+      <li class="nav-item has-treeview ">
+        <a href="#" class="nav-link">
+          <i class="nav-icon fa fa-book"></i>
+          <p>Learn & Support
+            <i class="fa fa-angle-right right"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-phone"></i>
+              <p>Contact Us</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-files-o"></i>
+              <p>Documentation</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-question-circle-o"></i>
+              <p>Frequently Asked Questions </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-calculator"></i>
+              <p>Glossary & Statistical Calculations</p>
+            </a>
+          </li>
+          <li class="nav-item has-megamenu" id="felearn">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>Guides
+              <i class="fa fa-angle-right right"></i>
+            </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-certificate"></i>
+              <p>Training </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-file-video-o"></i>
+              <p>Videos</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-file-video-o"></i>
+              <p>FE Analytics Introduction Video</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-file-video-o"></i>
+              <p>Portfolio Builder Video </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-file-video-o"></i>
+              <p>Basic Research Video</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-file-video-o"></i>
+              <p>Advanced Research Video</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-video-camera"></i>
+              <p>Webinars</p>
+            </a>
+          </li>
+          </ul>
+      </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-user-circle"></i>
+              <p>Admin
+                <i class="fa fa-angle-right right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-cogs"></i>
+                  <p>User Admin</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-asterisk"></i>
+                  <p>Group Admin</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-exchange"></i>
+                  <p>RQ Stats</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-key"></i>
+                  <p>Settings</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-key"></i>
+                  <p>Internal Report</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-key"></i>
+                  <p>Inspect Active List</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-key"></i>
+                  <p>Widget configuration</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon  fa fa-flag"></i>
+              <p>Legal
+                <i class="fa fa-angle-right right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-cogs"></i>
+                  <p>3rd Party Disclaimers</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-cogs"></i>
+                  <p>Privacy & Cookie Policy</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-cogs"></i>
+                  <p>Terms & Conditions</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item ">
+            <a href="#" class="nav-link">
+              <i class="nav-icon  fa fa-flag"></i>
+              <p>Message Centre</p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon  fa fa-flag"></i>
+              <p>Messaging Options
+                <i class="fa fa-angle-right right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-cogs"></i>
+                  <p>Message Archive</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-cogs"></i>
+                  <p>Message Composer</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon di-ic_input_24px"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <div id="wrapper">
+        <!--<div class="link-group">
+        <h5>Active list</h5>
+		<a href="activelist.html"  class="btn btn-info active"> New</a>
+        <a href="research.html" class="btn  btn-info  "> Old</a>  </div>-->
+        <div class="link-group">
+          <h5>Active list</h5>
+          <a href="research.html" class="btn btn-info active"> New</a>
+        </div>
+        <div class="title-header" style=" margin-top:90px; padding-bottom: 0px;">
+          <div class="dropdown"> <span>Research</span> </div>
+          <div class="main-tab">
+            <div class="button-group row">
+              <button class="btn btn-success btn-half prev-no-style large" id="build" data-val="prev"><span
+                  class="step">1</span>Build My Active List</button>
+              <button class="btn btn-default  btn-half  next-no-style" id="choose" data-val="next"><span
+                  class="step">2</span>Choose Action</button>
+            </div>
+          </div>
+          <section class="content">
+            <div class="container-fluid" style="padding-right: 0;padding-left: 0;">
+              <div class="  ressearch-row">
+                <div class="carousel-no-style">
+                  <ul class="car-container">
+                    <li class="li-car-list">
+                      <div class="build-active-list-container  car-list">
+                        <div class="card build-active-info choose-instruments">
+                          <div class="card-header">
+                            <div class="card-title"> Choose your instruments</div>
+                          </div>
+                          <div class="card-body">
+                            <div class="flex-container row">
+                              <div class="col-md-4">
+                                <!-- categories dropdown -->
+                                <div class="filter-dropdown-list categories">
+                                  <div class="form-group">
+                                    <select id="fundslist" name="fundslist"
+                                      class="form-control select2-hidden-accessible" classname="DropDownListMediumLarge"
+                                      data-select2-id="fundslist" tabindex="-1" aria-hidden="true">
+                                      <option selected="selected">Funds</option>
+                                      <option>Sectors</option>
+                                      <option>Market Indices</option>
+                                      <option>Portfolios</option>
+                                      <option>Fund Managers</option>
+                                      <option>Currencies</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="col-md-6">
+                                <div class="instrument-search-container">
+                                  <input type="text" class="form-control instrument-search-box-alt"
+                                    placeholder="Search for instruments">
+                                  <div class="btn btn-navbar instrument-search-alt"> <i class="fa fa-search"></i> </div>
+                                </div>
+
+                              </div>
+                              <div class="col-md-2">
+                                <button type="button" class="fund-search btn btn-default btn-block btn-filter"
+                                  data-toggle="collapse" data-target="#filterSectionFunds"><i
+                                    class="fa fa-filter left"></i>
+                                </button>
+                              </div>
+                            </div>
+
+                            <div class="select2-tab active" id="Funds">
+                              <div class="card-body fund-results-body for-funds">
+                                <div id="filterSectionFunds" class="collapse show" >
+                                  <div class="filter-section-container ">
+                                    <div class="filter-dropdown-container row">
+                                      <div class="filter-dropdown-list col-md-4">
+                                        <div class="form-group">
+                                          <label>Universe</label>
+                                          <select id="Universe" name="Universe" class="form-control"
+                                            classname="DropDownListMediumLarge">
+                                            <option value="A">< Select Universe ></option>
+                                            <optgroup label="UK Funds">
+                                                <option value="AI" >ABI Pensions(A)</option>
+                                              
+                                              <option value="T">AIC Investment Companies(T)</option>
+                                              <option value="EQ">Equities(EQ)</option>
+                                              <option value="PU">FE-Rated Passive Investments(PU)</option>
+                                              <option value="N">Insurance(N)</option>
+                                              <option value="O">Investment Association(O)</option>
+                                              <option value="LS">LSE Equities(LS)</option>
+                                              <option value="ML">Multi-manager(ML)</option>
+                                              <option value="SU">Mutual(SU)</option>
+                                              <option value="P">Pension(P)</option>
+                                              <option value="R">Retail UT and OEICs(R)</option>
+                                              <option value="MP">Risk Targeted Multi-Asset Solutions(MP)</option>
+                                              <option value="UP">Structured Investments(UP)</option>
+                                              <option value="U">UT and OEICs(U)</option>
+                                            </optgroup>
+                                            <optgroup label="European Funds">
+                                              <option value="AU">Austria Mutual(AU)</option>
+                                              <option value="BE">Belgium Mutual(BE)</option>
+                                              <option value="DK">Denmark Mutual(DK)</option>
+                                              <option value="FN">Finland Mutual(FN)</option>
+                                              <option value="FS">Frankfurt Equities(FS)</option>
+                                              <option value="GM">Germany Mutual(GM)</option>
+                                              <option value="IT">Italy Mutual(IT)</option>
+                                              <option value="LC">LCA France Domestic(LC)</option>
+                                              <option value="LU">Luxembourg Mutual(LU)</option>
+                                              <option value="HL">Netherlands Mutual(HL)</option>
+                                              <option value="NR">Norway Mutual(NR)</option>
+                                              <option value="SW">Sweden Mutual(SW)</option>
+                                              <option value="SE">Swiss Equities(SE)</option>
+                                              <option value="CM">Switzerland Mutual(CM)</option>
+                                            </optgroup>
+                                            <optgroup label="Irish Funds">
+                                              <option value="D">Ireland Domestic Gross(D)</option>
+                                              <option value="DN">Ireland Domestic Net(DN)</option>
+                                              <option value="DP">Ireland Domestic Pension(DP)</option>
+                                              <option value="DG">Ireland Insurance Gross(DG)</option>
+                                              <option value="DL">Ireland Insurance Net(DL)</option>
+                                              <option value="DO">Ireland Offshore(DO)</option>
+                                            </optgroup>
+                                          </select>
+                                        </div>
+                                      </div>
+                                      <div class="filter-dropdown-list  col-md-4">
+                                        <div class="form-group">
+                                          <label>Management Group</label>
+                                          <select name="ListManager" id="ListManager" class="form-control">
+                                            <option>< Select a Group ></option>
+                                            <option   value="C:IF" title="7IM Investment Funds">7IM Investment
+                                              Funds</option>
+                                            <option value="C:MGL" title="8AM Global LLP">8AM Global LLP</option>
+                                            <option value="C:SCOE" title="Aberdeen Fund Managers Limited">Aberdeen Fund
+                                              Managers Limited</option>
+                                            <option value="C:AMBA"
+                                              title="Aberdeen Standard Investments Luxembourg S.A.">Aberdeen Standard
+                                              Investments Luxembourg S.A.</option>
+                                            <option value="C:ASSI" title="Aberforth Unit Trust Mgrs Ltd">Aberforth Unit
+                                              Trust Mgrs Ltd</option>
+                                            <option value="C:AVIA" title="ACPI Investments Limited">ACPI Investments
+                                              Limited</option>
+                                            <option value="C:BKOS" title="Activus Wealth Ltd">Activus Wealth Ltd
+                                            </option>
+                                            <option value="C:MERR" title="AllianceBernstein (Luxembourg) S.a r.l.">
+                                              AllianceBernstein (Luxembourg) S.a r.l.</option>
+                                            <option value="C:BGI" title="Allianz Global Investors GmbH">Allianz Global
+                                              Investors GmbH</option>
+                                            <option value="C:CANA" title="Allianz Global Invtrs GmbH(UK)">Allianz Global
+                                              Invtrs GmbH(UK)</option>
+                                            <option value="C:CANT" title="Amati Global Investors Limited">Amati Global
+                                              Investors Limited</option>
+                                            <option value="C:CLER" title="Amundi SGR S.p.A">Amundi SGR S.p.A</option>
+                                            <option value="C:CMIG" title="Anpero Capital Limited">Anpero Capital Limited
+                                            </option>
+                                            <option value="C:CONL" title="Apollo Asset Management">Apollo Asset
+                                              Management</option>
+                                            <option value="C:HAMA" title="Architas Multi-Manager Ltd">Architas
+                                              Multi-Manager Ltd</option>
+                                            <option value="C:HME" title="Ardevora">Ardevora</option>
+                                            <option value="C:EQUI" title="Argonaut Capital Partners">Argonaut Capital
+                                              Partners</option>
+                                            <option value="C:FAFS" title="Artemis Fund Managers Limited">Artemis Fund
+                                              Managers Limited</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                      <div class="filter-dropdown-list  col-md-4">
+                                        <div class="form-group">
+                                          <label>Sectors</label>
+                                          <select name="ListSector" id="ListSector"  class="form-control">
+                                             <option value="XC:ABIFEEJP"
+                                              title="ABI Asia Pacific excluding Japan Equities - Dec 89">< Select a Sector ></option>
+                                              <option value="XAU:ABR" title="AM Absolute Return - Dec 89">AM Absolute Return - Dec 89</option>
+                                              <option value="XAU:COM" title="AM Commodity &amp; Energy - Dec 89">AM Commodity &amp; Energy - Dec 89</option>
+                                              <option value="XAU:CON" title="AM Convertible - Apr 91">AM Convertible - Apr 91</option>
+                                              <option value="XAU:EEA" title="AM Equity - Austria - Dec 89">AM Equity - Austria - Dec 89</option>
+                                              <option value="XAU:EEU" title="AM Equity - Eastern Europe - Oct 90">AM Equity - Eastern Europe - Oct 90</option>
+                                              <option value="XAU:IEM" title="AM Equity - Emerging Markets - Jan 94">AM Equity - Emerging Markets - Jan 94</option>
+                                              <option value="XAU:EQE" title="AM Equity - Ethical - Jan 01">AM Equity - Ethical - Jan 01</option>
+                                              <option value="XAU:EEC" title="AM Equity - Euro Countries - Dec 89">AM Equity - Euro Countries - Dec 89</option>
+                                              <option value="XAU:EUQ" title="AM Equity - Europe - Dec 89">AM Equity - Europe - Dec 89</option>
+                                              <option value="XAU:ESC" title="AM Equity - Europe Single Country - Jan 94">AM Equity - Europe Single Country - Jan 94</option>
+                                              <option value="XAU:AXJ" title="AM Equity - Far East ex Japan - Jan 94">AM Equity - Far East ex Japan - Jan 94</option>
+                                              <option value="XAU:AIJ" title="AM Equity - Far East inc Japan - Jan 95">AM Equity - Far East inc Japan - Jan 95</option>
+                                              <option value="XAU:EFL" title="AM Equity - Financial - Jun 98">AM Equity - Financial - Jun 98</option>
+                                              <option value="XAU:EQF" title="AM Equity - France - Oct 91">AM Equity - France - Oct 91</option>
+                                              <option value="XAU:EQG" title="AM Equity - Germany - Dec 89">AM Equity - Germany - Dec 89</option>
+                                              <option value="XAU:IEG" title="AM Equity - Global - Dec 89">AM Equity - Global - Dec 89</option>
+                                              <option value="XAU:EQB" title="AM Equity - Iberia - Oct 97">AM Equity - Iberia - Oct 97</option>
+                                              <option value="XAU:EIN" title="AM Equity - India - Dec 05">AM Equity - India - Dec 05</option>
+                                              <option value="XAU:EQI" title="AM Equity - Italy - May 96">AM Equity - Italy - May 96</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-header fund-results-header for-funds ">
+                                  <div class="card-title ">Fund Results (0) </div>
+                                </div>
+                                <table class="table fund-results results-list for-funds " data-name="funds">
+                                    <thead >
+                                        <tr>
+                                          <th class="empty-message">Please select a filter option to view results. </th>
+                                        </tr>
+                                      </thead>
+                                  <tbody style="display:none">
+                                    <!-- <tr>
+                                        <td class="fundname">Aberdeen - Sterling Money Market A Acct - Aug 90 (I285)</td>
+                                        <td> <i class="fa fa-info-circle"></i> </td>
+                                        <td> <i class="fa fa-file"></i> </td>
+                                        <td> <i class="fa fa-bell"></i></td>
+                                        <td> <input type="checkbox" /> </td>
+                                        <td></td>
+                                        <td> <i class="fa fa-trash"></i> </td>
+                                      </tr> -->
+                                    <tr id="1">
+                                      <td class="fundname">Aegon/Scottish Equitable plc - Fidelity Asia - Dec 06 (Q560)
+                                      </td>
+                                      <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                    </tr>
+                                    <tr id="2">
+                                      <td class="fundname">Aegon/Scottish Equitable plc - Fidelity Asia S2 - Jan 08
+                                        (DFO2) </td>
+                                      <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                    </tr>
+                                    <tr id="3">
+                                      <td class="fundname">Aegon/Scottish Equitable plc - Pacific - Aug 85 (SQ13) </td>
+                                      <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                    </tr>
+                                    <tr id="4">
+                                      <td class="fundname">Aegon/Scottish Equitable plc - Pacific S2 - Jan 08 (DFR5)
+                                      </td>
+                                      <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                    </tr>
+                                    <tr id="5">
+                                      <td class="fundname">Av - Asia Pacific ex Japan Equities AL - May 02 (GT61) </td>
+                                      <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                    </tr>
+                                    <tr id="6">
+                                      <td class="fundname">Av - Invesco Perpetual Asian AL - Jul 06 (EZ27) </td>
+                                      <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                    </tr>
+                                    <tr id="7">
+                                      <td class="fundname">Aviva - Aberdeen Asia Pacific Equity Inet - Sep 06 (N799)
+                                      </td>
+                                      <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                    </tr>
+                                    <tr id="8">
+                                      <td class="fundname">Aviva - AM Pacific NU - Jun 86 (NU27) </td>
+                                      <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                    </tr>
+                                    <tr id="9">
+                                      <td class="fundname">Aviva - Far East 1 S5 - Dec 92 (NW18) </td>
+                                      <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                    </tr>
+                                    <tr id="10">
+                                      <td class="fundname">Aviva - Fidelity Asia Inet - Nov 08 (DSE1) </td>
+                                      <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                    </tr>
+
+                                  </tbody>
+                                </table>
+                                <div class="row align-items-center">
+                                  
+                                   <div class="pagination paginate"> 
+                                       
+                                        <span class="pages-label">Pages</span>
+                                        <a class="goto go-prev"><i class="fa fa-angle-left"></i></a>
+                                        <span class="current-page">
+                                          <input type="text" value="1">
+                                        </span>
+                                        <span class="slash">/</span>
+                                        <span class="total-pages">3</span>
+                                        <a class="goto go-next"><i class="fa fa-angle-right"></i></a>
+                                   </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="select2-tab" id="Sectors">
+                              <div class="card-body fund-results-body for-sector">
+                                <div id="filterSectionSectors"  class="collapse show">
+                                  <div class="filter-section-container ">
+                                    <div class="filter-dropdown-container row">
+                                      <div class="filter-dropdown-list col-md-4">
+                                        <div class="form-group">
+                                          <label>Universe</label>
+                                          <select id="SelectSector" name="SelectSector" class="form-control"
+                                            classname="DropDownListMediumLarge">
+                                            <option value="A">< Select Universe ></option>
+                                            <optgroup label="UK Funds">
+                                              <option value="AI" >ABI Pensions(A)</option>
+                                              <option value="T">AIC Investment Companies(T)</option>
+                                              <option value="T">AIC Investment Companies(T)</option>
+                                              <option value="EQ">Equities(EQ)</option>
+                                              <option value="PU">FE-Rated Passive Investments(PU)</option>
+                                              <option value="N">Insurance(N)</option>
+                                              <option value="O">Investment Association(O)</option>
+                                              <option value="LS">LSE Equities(LS)</option>
+                                              <option value="ML">Multi-manager(ML)</option>
+                                              <option value="SU">Mutual(SU)</option>
+                                              <option value="P">Pension(P)</option>
+                                              <option value="R">Retail UT and OEICs(R)</option>
+                                              <option value="MP">Risk Targeted Multi-Asset Solutions(MP)</option>
+                                              <option value="UP">Structured Investments(UP)</option>
+                                              <option value="U">UT and OEICs(U)</option>
+                                            </optgroup>
+                                            <optgroup label="European Funds">
+                                              <option value="AU">Austria Mutual(AU)</option>
+                                              <option value="BE">Belgium Mutual(BE)</option>
+                                              <option value="DK">Denmark Mutual(DK)</option>
+                                              <option value="FN">Finland Mutual(FN)</option>
+                                              <option value="FS">Frankfurt Equities(FS)</option>
+                                              <option value="GM">Germany Mutual(GM)</option>
+                                              <option value="IT">Italy Mutual(IT)</option>
+                                              <option value="LC">LCA France Domestic(LC)</option>
+                                              <option value="LU">Luxembourg Mutual(LU)</option>
+                                              <option value="HL">Netherlands Mutual(HL)</option>
+                                              <option value="NR">Norway Mutual(NR)</option>
+                                              <option value="SW">Sweden Mutual(SW)</option>
+                                              <option value="SE">Swiss Equities(SE)</option>
+                                              <option value="CM">Switzerland Mutual(CM)</option>
+                                            </optgroup>
+                                            <optgroup label="Irish Funds">
+                                              <option value="D">Ireland Domestic Gross(D)</option>
+                                              <option value="DN">Ireland Domestic Net(DN)</option>
+                                              <option value="DP">Ireland Domestic Pension(DP)</option>
+                                              <option value="DG">Ireland Insurance Gross(DG)</option>
+                                              <option value="DL">Ireland Insurance Net(DL)</option>
+                                              <option value="DO">Ireland Offshore(DO)</option>
+                                            </optgroup>
+                                          </select>
+                                        </div>
+                                      </div>
+
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-header fund-results-header">
+                                  <div class="card-title ">Sector  Results (0) </div>
+                                </div>
+                                <table class="table fund-results results-list  " data-name="sector">
+                                  <thead>
+                                    <tr>
+                                      <th class="empty-message">Please select a filter option to view results. </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody style="display:none">
+                                      <tr id="s1">
+                                          <td class="fundname">ABI Asia Pacific excluding Japan Equities - Dec 89
+                                          </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="s2">
+                                          <td class="fundname">ABI Asia Pacific including Japan Equities - Dec 89
+                                            (DFO2) </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="s3">
+                                          <td class="fundname">ABI Commodity/Energy - Dec 89 </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="s4">
+                                          <td class="fundname">ABI Deposit & Treasury - Dec 89
+                                          </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="s5">
+                                          <td class="fundname">ABI Distribution Funds - Dec 89</td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="s6">
+                                          <td class="fundname">ABI Europe excluding UK Equities - Dec 89 </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="s7">
+                                          <td class="fundname">ABI Europe including UK Equities - Dec 89
+                                          </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="s8">
+                                          <td class="fundname">ABI Flexible Investment - Dec 89 </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="s9">
+                                          <td class="fundname">ABI Global Emerging Markets Equities - Dec 89 </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="s10">
+                                          <td class="fundname">ABI Global Equities - Dec 89 </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                  </tbody>
+                                </table>
+
+
+                              </div>
+                            </div>
+                            <div class="select2-tab" id="Market Indices">
+                              <div class="card-body fund-results-body for-indices">
+                                <div id="filterSectionMarketIndices" class="collapse show" >
+                                  <div class="filter-section-container ">
+                                    <div class="filter-dropdown-container row">
+                                      <div class="filter-dropdown-list col-md-4">
+                                        <div class="form-group">
+                                          <label>Universe</label>
+                                          <select id="SelectMarket" name="Indices" class="form-control"
+                                            classname="DropDownListMediumLarge">
+                                            <option value="A">
+                                                < Select an Index >
+                                              </option>
+
+                                            <option value="AI">
+                                              < My Indices >
+                                            </option>
+                                            <option value="T">
+                                              < Other Measures >
+                                            </option>
+                                            <option value="EQ">
+                                              < Top Indices >
+                                            </option>
+
+
+                                            <optgroup label="Indices by Provider">
+                                              <option value="FXAF">AFI</option>
+                                              <option value="ARCI">ARC Indices</option>
+                                              <option value="ATSX">Athens Exchange</option>
+                                              <option value="ABOS">Australian Bureau of Statistics</option>
+                                              <option value="BOEN">Bank of England</option>
+                                              <option value="BRCI">BlackRock Custom Indices</option>
+                                              <option value="BBAB">Bloomberg AusBond Indices</option>
+                                              <option value="BARC">Bloomberg Barclays</option>
+                                              <option value="BBRG">Bloomberg Indices</option>
+                                              <option value="BBNZ">Bloomberg NZBond Indices</option>
+                                              <option value="BOLS">Bolsa De Madrid</option>
+                                              <option value="BOVE">Brazil Sao Paulo SE</option>
+                                              <option value="MIBS">BSE</option>
+                                              <option value="BUSE">Budapest Stock Exchange</option>
+                                              <option value="BATS">Cboe Europe Equity Benchmarks</option>
+                                              <option value="CCIL">CCIL</option>
+                                              <option value="CIIS">China Securities Index</option>
+                                              <option value="MICS">Credit Suisse</option>
+                                              <option value="DEUB">Deutsche Borse</option>
+                                              <option value="MIDJ">Dow Jones</option>
+                                              <option value="EURB">Euribor</option>
+                                              <option value="EURN">Euronext</option>
+                                              <option value="IREX">Euronext Dublin</option>
+                                            </optgroup>
+                                            <optgroup label="Irish Funds">
+                                              <option value="D">Ireland Domestic Gross(D)</option>
+                                              <option value="DN">Ireland Domestic Net(DN)</option>
+                                              <option value="DP">Ireland Domestic Pension(DP)</option>
+                                              <option value="DG">Ireland Insurance Gross(DG)</option>
+                                              <option value="DL">Ireland Insurance Net(DL)</option>
+                                              <option value="DO">Ireland Offshore(DO)</option>
+                                            </optgroup>
+                                          </select>
+                                        </div>
+                                      </div>
+
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-header fund-results-header">
+                                  <div class="card-title ">Market Indices Results (0)</div>
+                                </div>
+                                <table class="table fund-results results-list  " data-name="Indices">
+                                  <thead>
+                                    <tr>
+                                      <th class="empty-message">Please select a filter option to view results. </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody style="display:none">
+                                      <tr id="m1">
+                                          <td class="fundname">AFI Aggressive
+                                          </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="m2">
+                                          <td class="fundname">AFI Balanced
+                                            (DFO2) </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="m3">
+                                          <td class="fundname">AFI Cautious </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="m4">
+                                          <td class="fundname">Bank of England Base Rate
+                                          </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="m5">
+                                          <td class="fundname">Cboe UK 100</td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="m6">
+                                          <td class="fundname">FTSE 100</td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="m7">
+                                          <td class="fundname">FTSE All Share
+                                          </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="m8">
+                                          <td class="fundname">FTSE World </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="m9">
+                                          <td class="fundname">FTSE World Ex UK </td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                        <tr id="m10">
+                                          <td class="fundname">MoneyFacts 90 Days Notice 10K</td>
+                                          <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                        </tr>
+                                  </tbody>
+                                </table>
+
+                              </div>
+                            </div>
+                            <div class="select2-tab" id="Portfolios">
+                              <div class="card-body fund-results-body for-portfolio">
+                                <div id="filterSectionPortfolios" class="collapse show" >
+                                  <div class="filter-section-container ">
+                                    <div class="filter-dropdown-container row">
+                                      <div class="filter-dropdown-list col-md-4">
+                                        <div class="form-group">
+                                          <label>Choose a Portfolio</label>
+                                          <select id="SelectModel" name="Portfolio" class="form-control"
+                                            classname="DropDownListMediumLarge">
+                                           
+                                            <option value="A">< Select a portfolio ></option> 
+                                              <option value="AI">FE Invest Core Models</option>
+                                              <option value="T">My Portfolios</option>
+                                              <option value="EQ">Historical Portfolios</option>
+
+                                             
+                                          </select>
+                                        </div>
+                                      </div>
+                                       
+                                      <div class="filter-dropdown-buttons col-md-8">
+                                         
+                                        
+                                        <button class=" btn btn-md btn-primary">New</button>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card-header fund-results-header">
+                                  <div class="card-title ">Portfolios (0)</div>
+                                </div>
+                                <table class="table fund-results results-list  " data-name="portfolio">
+                                    <thead>
+                                      <tr>
+                                        <th class="empty-message">Please select a filter option to view results. </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody style="display:none">
+                                        <tr id="p1">
+                                            <td class="fundname">FEI Core Risk Level 0
+                                            </td>
+                                            <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                            <td><button class=" btn btn-sm btn-primary edit">Edit</button></td>
+                                          </tr>
+                                          <tr id="p2">
+                                            <td class="fundname">FEI Core Risk Level 1 Short Term
+                                               </td>
+                                            <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                            <td><button class=" btn btn-sm btn-primary edit">Edit</button></td>
+                                          </tr>
+                                          <tr id="p3">
+                                            <td class="fundname">FEI Core Risk Level 1 Medium Term </td>
+                                            <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                            <td><button class=" btn btn-sm btn-primary edit">Edit</button></td>
+                                          </tr>
+                                          <tr id="p4">
+                                            <td class="fundname">FEI Core Risk Level 1 Long Term
+                                            </td>
+                                            <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                            <td><button class=" btn btn-sm btn-primary edit">Edit</button></td>
+                                          </tr>
+                                          <tr id="p5">
+                                            <td class="fundname">FEI Core Risk Level 2 Short Term</td>
+                                            <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                            <td><button class=" btn btn-sm btn-primary edit">Edit</button></td>
+                                          </tr>
+                                          <tr id="p6">
+                                            <td class="fundname">FEI Core Risk Level 2 Medium Term</td>
+                                            <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                            <td><button class=" btn btn-sm btn-primary edit">Edit</button></td>
+                                          </tr>
+                                          <tr id="p7">
+                                            <td class="fundname">FEI Core Risk Level 2 Long Term
+                                            </td>
+                                            <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                            <td><button class=" btn btn-sm btn-primary edit">Edit</button></td>
+                                          </tr>
+                                          <tr id="p8">
+                                            <td class="fundname">FEI Core Risk Level 3 Short Term </td>
+                                            <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                            <td><button class=" btn btn-sm btn-primary edit">Edit</button></td>
+                                          </tr>
+                                          <tr id="p9">
+                                            <td class="fundname">FEI Core Risk Level 3 Medium Term </td>
+                                            <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                            <td><button class=" btn btn-sm btn-primary edit">Edit</button></td>
+                                          </tr>
+                                          <tr id="p10">
+                                            <td class="fundname">FEI Core Risk Level 3 Long Term</td>
+                                            <td><i class="di-ic_add_shopping_cart_24px"></i></td>
+                                            <td><button class=" btn btn-sm btn-primary edit">Edit</button></td>
+                                          </tr>
+                                    </tbody>
+                                  </table>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="li-car-list">
+                      <div class="  active-list-container  car-list">
+                        <div class="card   action-container action-container-alt">
+                          <div class="card-header">
+                            <h3 class="card-title"> My Active List <span class="fund-count">0</span></h3>
+                            <div class="header-options">
+                              <button class=" btn btn-sm btn-secondary clear">Clear</button>
+                              <button class=" btn btn-md btn-icon  "><i class="fa fa-save"></i> </button>
+                              <button class=" btn btn-md btn-icon  "><i class="fa fa-folder-open"></i> </button>
+                              <button class=" btn btn-md btn-icon  "><i class="fa fa-search"></i> </button>
+                              <div class="filter-dropdown-list categories">
+                                <div class="form-group">
+                                  <select id="selectedList" name="selectedList"
+                                    class="form-control select2-hidden-accessible" classname="DropDownListMediumLarge"
+                                    data-select2-id="selectedList" tabindex="-1" aria-hidden="true">
+                                    <option>Funds</option>
+                                    <option>Sectors</option>
+                                    <option>Market Indices</option>
+                                    <option>Model Portfolios</option>
+                                    <option>Portfolios</option>
+                                    <option>Fund Managers</option>
+                                    <option>Currencies</option>
+                                  </select>
+                                </div>
+                              </div>
+                          </div>
+                          </div>
+                          <!-- /.card-header -->
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col-md-4">
+                                 
+                              </div>
+                              <div class="  col-md-8">
+                                <!-- <div class="instrument-search-container-alt">
+                                  <input type="text" class="form-control instrument-search-box-alt"
+                                    placeholder="Name or code...">
+                                  <div class="btn btn-navbar instrument-search-alt"> <i class="fa fa-search"></i> </div>
+                                </div> -->
+
+                              </div>
+                            </div>
+                            <table class="table fund-results  ">
+                              <tbody>
+                                <!-- <tr>
+                                <td class="fundname">Aegon/Scottish Equitable plc - Fidelity Asia S2 - Jan 08 (DFO2)</td>
+                                <td><i class="fa fa-bell"></i></td>
+                                <td><i class="fa fa-th-large"></i></td>
+                                <td><input type="checkbox" /></td>
+                                <td><i class="fa fa-trash"></i></td>
+                              </tr>
+                                <tr>
+                                <td class="fundname">Av - Invesco Perpetual Asian AL - Jul 06 (EZ27) </td>
+                                <td><i class="fa fa-bell"></i></td>
+                                <td><i class="fa fa-th-large"></i></td>
+                                <td><input type="checkbox" /></td>
+                                <td><i class="fa fa-trash"></i></td>
+                              </tr>
+                                <tr>
+                                <td class="fundname">Aviva - Fidelity Asia Inet - Nov 08 (DSE1) </td>
+                                <td><i class="fa fa-bell"></i></td>
+                                <td><i class="fa fa-th-large"></i></td>
+                                <td><input type="checkbox" /></td>
+                                <td><i class="fa fa-trash"></i></td>
+                              </tr>
+                                <tr>
+                                <td class="fundname">Aviva - First State Greater China Growth Inet - Nov 09 (HQF1)</td>
+                                <td><i class="fa fa-bell"></i></td>
+                                <td><i class="fa fa-th-large"></i></td>
+                                <td><input type="checkbox" /></td>
+                                <td><i class="fa fa-trash"></i></td>
+                              </tr> -->
+                                <!--  <tr>
+                                <td class="fundname">Aberdeen - Sterling Money Market A Acct - Sep 90</td>
+                                <td><i class="fa fa-bell"></i></td>
+                                <td><i class="fa fa-th-large"></i></td>
+                                <td><input type="checkbox" /></td>
+                                <td><i class="fa fa-trash"></i></td>
+                              </tr>
+                                <tr>
+                                <td class="fundname">Aberdeen - Money Market A Acct</td>
+                                <td><i class="fa fa-bell"></i></td>
+                                <td><i class="fa fa-th-large"></i></td>
+                                <td><input type="checkbox" /></td>
+                                <td><i class="fa fa-trash"></i></td>
+                              </tr>
+                              <tr>
+                                  <td class="fundname">Aberdeen - Sterling Money Market A Acct - Aug 90 (I285)</td>
+                                  <td><i class="fa fa-bell"></i></td>
+                                  <td><i class="fa fa-th-large"></i></td>
+                                  <td><input type="checkbox" /></td>
+                                  <td><i class="fa fa-trash"></i></td>
+                                </tr>
+                                  <tr>
+                                  <td class="fundname">Aviva Inv - Cash 1 Acc - Dec 07 (AMB5)</td>
+                                  <td><i class="fa fa-bell"></i></td>
+                                  <td><i class="fa fa-th-large"></i></td>
+                                  <td><input type="checkbox" /></td>
+                                  <td><i class="fa fa-trash"></i></td>
+                                </tr>
+                                  <tr>
+                                  <td class="fundname">Janus Henderson Inst - Cash Corporate Acc - Jan 09 (ENV2)</td>
+                                  <td><i class="fa fa-bell"></i></td>
+                                  <td><i class="fa fa-th-large"></i></td>
+                                  <td><input type="checkbox" /></td>
+                                  <td><i class="fa fa-trash"></i></td>
+                                </tr>
+                                  <tr>
+                                  <td class="fundname">Aberdeen - Sterling Money Market A Acct </td>
+                                  <td><i class="fa fa-bell"></i></td>
+                                  <td><i class="fa fa-th-large"></i></td>
+                                  <td><input type="checkbox" /></td>
+                                  <td><i class="fa fa-trash"></i></td>
+                                </tr>
+                                  <tr>
+                                  <td class="fundname">Aberdeen - Sterling Money Market A Acct - Sep 90</td>
+                                  <td><i class="fa fa-bell"></i></td>
+                                  <td><i class="fa fa-th-large"></i></td>
+                                  <td><input type="checkbox" /></td>
+                                  <td><i class="fa fa-trash"></i></td>
+                                </tr>
+                                  <tr>
+                                  <td class="fundname">Aberdeen - Money Market A Acct</td>
+                                  <td><i class="fa fa-bell"></i></td>
+                                  <td><i class="fa fa-th-large"></i></td>
+                                  <td><input type="checkbox" /></td>
+                                  <td><i class="fa fa-trash"></i></td>
+                                </tr>-->
+                              </tbody>
+                            </table>
+                            <div class="row align-items-center">
+                              <div class="pagination paginate"> 
+                                       
+                                <span class="pages-label">Pages</span>
+                                <a class="goto go-prev"><i class="fa fa-angle-left"></i></a>
+                                <span class="current-page">
+                                  <input type="text" value="1">
+                                </span>
+                                <span class="slash">/</span>
+                                <span class="total-pages">3</span>
+                                <a class="goto go-next"><i class="fa fa-angle-right"></i></a>
+                           </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="arrow-group">
+                         
+                        <button class="next-no-style arrow-right arrow">
+                          <span class="arrow-content">   <span class="text">Next</span> <i class="fa fa-angle-right "></i></span>
+                        </button>
+                      </div>
+                    </li>
+                    <li class="li-car-list">
+                      <!-- section chart generate choose-action car-list -->
+                      <div class="choose-action car-list ">
+                        <div class="card  action-container action-container-alt action-container-alt1">
+                          <div class="card-header">
+                            <!--                    <h3 class="card-title"> Choose action</h3>-->
+                          </div>
+                          <!-- /.card-header -->
+                          <div class="card-body chart-type">
+                            <form role="form">
+                              <ul id="clothing-nav" class="nav nav-tabs" role="tablist">
+                                <!-- Dropdown -->
+                                <!-- <li class="nav-item dropdown"></li>
+                                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Charts
+                                  </a>
+                                  <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#" role="tab" id="dropdown-shoes-tab" data-toggle="tab">Filter
+                                      1</a>
+                                    <a class="dropdown-item" href="#" role="tab" id="dropdown-boots-tab" data-toggle="tab">Filter
+                                      2</a>
+                                  </div> 
+                                </li>-->
+                                <li class="nav-item chart-tabs "> <a class="nav-link active" href="#Charts"
+                                    role="button"> Charts </a> </li>
+                                <li class="nav-item chart-tabs " disabled> <a class="nav-link" href="#Charts" role="button">
+                                    Tables </a> </li>
+                                <li class="nav-item chart-tabs"> <a class="nav-link" href="#Charts" role="button">
+                                    Reports </a> </li>
+                                <li class="nav-item chart-tabs"> <a class="nav-link" href="#Charts" role="button"> KIIDs
+                                  </a> </li>
+                              </ul>
+                              <div class="form-group mt-3">
+                                <label class="control-label-alt" for="inputSuccess"> Type</label>
+                                <div class="form-group">
+                                  <select id="drop1" class="form-control select2" name="inputSuccess">
+                                    <option>Performance Line Chart</option>
+                                    <option>Interactive Performance Chart</option>
+                                    <option>Rolling Chart</option>
+                                    <option>Scatter Chart</option>
+                                    <option>Technical Chart</option>
+                                    <option>Bar Chart</option>
+                                    <option>Regular Savings/Withdrawals</option>
+                                    <option>Income Earned Chart</option>
+                                    <option>Distribution Chart</option>
+                                    <option>FE Risk Score Chart</option>
+                                    <option>Snail Trail Chart</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="dropdown-divider"></div>
+                              <label class="control-label-alt" for="inputSuccess"> Performance Line Chart
+                                Options</label>
+                              <div class="performance-line-chart-options-containers mt-2">
+                                <div class="form-row">
+                                  <div class="performance-line-chart-options-lable"> Performance Period </div>
+                                  <div class="performance-line-chart-options-dropdown">
+                                    <div class="form-group">
+                                      <select class="form-control select2" id="drop2">
+                                        <option>1 Year</option>
+                                        <option>2 Year</option>
+                                        <option>3 Year</option>
+                                        <option>4 Year</option>
+                                      </select>
+                                    </div>
+                                    <!--<div class="form-group">
+                                <select class="form-control select2">
+                                <option>1 Year</option>
+                                <option>2 Year</option>
+                                <option>3 Year</option>
+                                <option>4 Year</option>
+                              </select>
+                              </div>-->
+                                    <div class="float-right add-period">
+                                      <button class="btn btn-sm btn-primary">Add Period</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                                 <!-- price type -->
+                            <div class="mandatory">
+                              <div class="form-row">
+                                <div class="performance-line-chart-options-lable">
+                                  Price Type
+                                </div>
+                                <div class="performance-line-chart-options-dropdown">
+                                  <div class="form-group">
+                                    <select class="form-control "  id="priceType">
+                                     <option value="0">Price</option><option value="1">Total Return</option><option value="2">Gross Return</option><option value="7">NAV</option><option value="10">Price &amp; TR</option><option value="20">Price &amp; Gross Return</option><option value="21">TR &amp; Gross Return</option><option value="70">Price &amp; NAV</option><option value="71">TR &amp; NAV</option><option value="210">Price, TR &amp; Gross Return</option><option value="710">Price, TR &amp; NAV</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                               <!-- currency -->
+                               <div class="form-row">
+                                <div class="performance-line-chart-options-lable">
+                                  Currency
+                                </div>
+                                <div class="performance-line-chart-options-dropdown">
+                                  <div class="form-group">
+                                    <select class="form-control"  id="currency">
+                                       
+                                  <option value="AUD">Australian Dollars</option>
+                                  <option value="BRL">Brazilian Real</option>
+                                  <option value="CAD">Canadian Dollar</option>
+                                  <option value="CNY">Chinese Renminbi</option>
+                                  <option value="EUR">Euros</option>
+                                  <option value="HKD">Hong Kong Dollars</option>
+                                  <option value="INR">Indian Rupees</option>
+                                  <option value="JPY">Japanese Yen</option>
+                                  <option value="">Local</option>
+                                  <option value="MYR">Malaysian Ringgit</option>
+                                  <option value="NZD">New Zealand Dollars</option>
+                                  <option value="NOK">Norwegian Krone</option>
+                                  <option value="GBP"  selected="">Pounds Sterling</option>
+                                  <option value="SGD">Singapore Dollars</option>
+                                  <option value="ZAR">South African Rand</option>
+                                  <option value="SEK">Swedish Krona</option>
+                                  <option value="CHF">Swiss Francs</option>
+                                  <option value="USD">US Dollars</option>
+                                </select>
+                              </div>
+                                </div>
+                              </div>
+                            </div>
+                              <div>
+                                   
+                                <a id="advSettingsToggle" class="btn btn-md btn-primary collapsed" data-toggle="collapse" data-target="#advSettings">Advanced Settings
+                                  <i class="fa fa-long-arrow-down"></i>
+                                </a>
+                                
+                                <div id="advSettings" class="collapse" >
+                                <!-- adv settings -->
+                                <div class="form-row">
+                                  <div class="performance-line-chart-options-lable"> Pricing Spread </div>
+                                  <div class="performance-line-chart-options-dropdown">
+                                    <div class="form-group">
+                                      <select class="form-control select2" id="drop3">
+                                        <option>Bid - Bid</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="performance-line-chart-options-lable"> Data Frequency </div>
+                                  <div class="performance-line-chart-options-dropdown">
+                                    <div class="form-group">
+                                      <select class="form-control select2" id="drop4">
+                                        <option>Daily</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="performance-line-chart-options-lable"> Base </div>
+                                  <div class="performance-line-chart-options-dropdown">
+                                    <div class="form-group">
+                                      <select class="form-control select2" id="drop5">
+                                        <option>% Change</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="performance-line-chart-options-lable"> Relative / Moving Avg. </div>
+                                  <div class="performance-line-chart-options-dropdown">
+                                    <div class="form-group">
+                                      <select class="form-control select2" id="drop6">
+                                        <option>None</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                  <div class="performance-line-chart-options-lable"> Logarithmic Scale </div>
+                                  <div class="performance-line-chart-options-dropdown">
+                                    <div class="form-group">
+                                      <select class="form-control select2" id="drop7">
+                                        <option>None</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                                  <!--adv settings  -->
+                              </div>
+                              <!--                        <div class="dropdown-divider"></div>-->
+                              <div class="note-box"><strong>Note:</strong> A maximum of 12 instruments can be plotted on
+                                the chart</div>
+                              <div class="more-btn mt-1 generate">
+                                <a href="">Generate chart</a>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="arrow-group">
+                          <button class="prev-no-style arrow-left arrow">
+                            <span class="arrow-content">      <i class="fa fa-angle-left "></i> <span class="text">Previous</span> </span> </button>
+                           
+                        </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+          </section>
+        </div>
+        <div class="arrow-group" hidden>
+          <button class="prev-no-style arrow-left arrow">
+            <span class="arrow-content">      <i class="fa fa-angle-left "></i> <span class="text">Previous</span> </span> </button>
+          <button class="next-no-style arrow-right arrow">
+            <span class="arrow-content">   <span class="text">Next</span> <i class="fa fa-angle-right "></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+ >
+  </div>
+
+
+
+
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal" onClick="close_dialogbox()">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form class="">
+            <div class="change-fund-universe row">
+              <div class="col-md-4">
+                <label><input type="radio" name="universe">ABI Insurance</label>
+              </div>
+              <div class="col-md-4">
+                <label><input type="radio" name="universe">Australia Mutual</label>
+              </div>
+              <div class="col-md-4">
+                <label><input type="radio" name="universe">UT and OEICs</label>
+              </div>
+            </div>
+            <div class="change-fund-universe row">
+              <div class="col-md-4">
+                <label><input type="radio" name="universe">Equities</label>
+              </div>
+              <div class="col-md-4">
+                <label><input type="radio" name="universe">Germany Mutual</label>
+              </div>
+              <div class="col-md-4">
+                <label><input type="radio" name="universe">Insurance</label>
+              </div>
+            </div>
+            <div class="change-fund-universe row">
+              <div class="col-md-4">
+                <label><input type="radio" name="universe">New Zealand Managed Investment</label>
+              </div>
+              <div class="col-md-4">
+                <label><input type="radio" name="universe">Australia Mutual</label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal" onClick="close_dialogbox()">Add
+            Fund</button>
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal" onClick="close_dialogbox()">Add Fund
+            & Sector</button>
+          <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal" onClick="close_dialogbox()">Add Fund
+            & Benchmark</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- ./wrapper -->
+   <!-- mega-menu -->
+   <div class="megamenu" data-id="feinvest">
+    <div class="mega-header">
+      <div class="mega-title">
+        <img src="dist/img/fe/1x/feInvest.png" alt="FE Invest" height="25">
+      </div>
+      <div class="title-sidelink">
+        <i class="nav-icon fa fa-cogs"></i>
+        <p>What is FE Invest?</p>
+      </div>
+    </div>
+    <div class="menu-content">
+      <!--col-->
+      <div class="menu-col col-1">
+        <div class="mega-col-title">
+          Funds
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-archive"></i>
+              <p>Fund Archive</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-file-text-o"></i>
+              <p>Governance Reports</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-check-circle"></i>
+              <p>FE Invest Approved List</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--col-->
+      <div class="menu-col col-2">
+        <div class="mega-col-title">
+          Portfolios
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-files-o"></i>
+              <p>Portfolio Reports</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-file-text-o"></i>
+              <p>Portfolio Review</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--col-->
+      <div class="menu-col col-1">
+        <div class="mega-col-title">
+          Supplementary
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-pencil-square"></i>
+              <p>Biannual Reviews</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-commenting"></i>
+              <p>Market Commentary Documents</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-bookmark-o"></i>
+              <p>Market Outlook Quarterly Reviews</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--col-->
+      <div class="menu-col col-1">
+        <div class="mega-col-title">
+          Methodology
+        </div>
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-fort-awesome"></i>
+              <p>Governance</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-folder-open"></i>
+              <p>Portfolios</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-file-text-o"></i>
+              <p>Reports</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-check-circle"></i>
+              <p>FE Invest Approved List</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-sitemap"></i>
+              <p>Finametrica Mapping-Active</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-sitemap"></i>
+              <p>Finametrica Mapping-Hybrid</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--col-->
+    </div>
+  </div>
+  <!-- mega-menu -->
+ <!-- mega-menu -->
+ <div class="megamenu" data-id="felearn">
+  <div class="mega-header">
+    <div class="mega-title">
+      <img src="dist/img/fe/1x/feGuides.png" alt="FE Guides" height="25">
+    </div>
+    <div class="title-sidelink">
+      <!-- link -->
+    </div>
+  </div>
+  <div class="menu-content">
+    <!--col-->
+    <div class="menu-col col-1">
+      <div class="mega-col-title">
+        Guides to FE Ratings
+      </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-user"></i>
+            <p>FE Alpha Manager</p>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-star"></i>
+              <p>FE Crown Rating</p>
+            </a>
+          </li>
+          <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-signal "></i>
+                <p>FE Risk Score</p>
+              </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-star-o"></i>
+                  <p>FE Passive Fund Ratings</p>
+                </a>
+              </li>
+
+      </ul>
+    </div>
+    <!--col-->
+    <div class="menu-col col-2">
+      <div class="mega-col-title">
+        User Guides
+      </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-book"></i>
+            <p>Getting Started</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-question-circle-o"></i>
+            <p>How to Build a Portfolio</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-cogs"></i>
+            <p>Portfolio Settings</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!--col-->
+    <div class="menu-col col-2">
+      <div class="mega-col-title">
+        All Other Guides
+      </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-book"></i>
+            <p>View All Chart Guides</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fa fa-book"></i>
+            <p>View All Table Guides</p>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>View All Report Guides</p>
+            </a>
+          </li>
+          <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-book"></i>
+                <p>View All Tool Guides</p>
+              </a>
+            </li>
+      </ul>
+    </div>
+    <!--col-->
+     
+  </div>
+</div>
+  <!-- mega-menu -->
+  <!-- REQUIRED SCRIPTS -->
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.js"></script>
+
+  <!-- SlimScroll 1.3.0 -->
+  <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- PAGE SCRIPTS -->
+  <script src="dist/js/pages/dashboard2.js"></script>
+  <script src="plugins/bootstrap-slider/bootstrap-slider.js"></script>
+  <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+  <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  <script
+    src="https://cdn.rawgit.com/InventPartners/bootstrap-responsive-tabs/master/bootstrap4/jquery.responsivetabs.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
+  <script src="dist/js/jquery.jcarousellite.js"></script>
+
+
+  <script>
+    $(function () {
+      $('.slider').slider();
+      $('#Universe, #ListManager,#unilist,   #selectedList').select2();
+      $('#ListSector').select2();
+      $('#drop1').select2();
+      $('#drop2').select2();
+      $('#drop3').select2();
+      $('#drop4').select2();
+      $('#drop5').select2();
+      $('#drop6').select2();
+      $('#drop7').select2();
+      $('#priceType').select2();
+      $('#currency').select2();
+    })
+  </script>
+  <script>
+
+    $(document).ready(function () {
+  // redirect to small screen
+  function redirectTo(){
+        $width = $(window).width();
+        if($width > 1440){
+          window.location.replace("http://design.financialexpress.net/analytics-dashboard/03/1920/activelist.html");
+        }
+      }
+
+      redirectTo();
+      
+      $(window).resize(function(){
+        redirectTo();  
+      })
+        // 
+      
+      //   #wrapper .build-active-list-container .card{
+      //   height: 100%;
+      // }
+      // $(window).resize(function() {
+      //   $('.card').css({'max-height':'805px','height': $(window).height() - 240});
+      //   $('.action-container.card').height(805);
+
+      // });
+
+      // $(window).trigger('resize');
+      // 
+      // $('.search-result-dropdown').hide();
+      $('.input-group').on('click', function (e) {
+        e.stopPropagation();
+        $('.search-result-dropdown').show();
+      });
+      $('.close-pane').on('click', function (e) {
+        e.stopPropagation();
+        $('.search-result-dropdown').hide();
+      });
+
+      $('.form-control-navbar').on('keyup', function () {
+        $('.search-result-dropdown').show();
+      });
+
+      $(document).click(function (e) {
+        if (!$(e.target).is('.search-result-dropdown, .search-result-dropdown *, .input-group-append')) {
+          $(".search-result-dropdown").hide();
+        }
+      });
+
+    });
+    $(function () {
+      $('.active-list-tabs').responsiveTabs();
+
+    });
+
+    //  tabs
+    $('.content-wrapper').find('.nav-link').click(function () {
+      var tab_id = $(this).attr('href');
+
+      $(this).parent().parent().find('.nav-link').removeClass('active');
+      $(this).parent().parent().parent().find('.tab-pane').removeClass('active');
+
+      $(this).addClass('active');
+      $(tab_id).addClass('active');
+    })
+    $('.search-result-dropdown').find('.nav-link').click(function () {
+      var tab_id = $(this).attr('href');
+
+      $(this).parent().parent().find('.nav-link').removeClass('active');
+      $(this).parent().parent().parent().find('.tab-pane').removeClass('active');
+
+      $(this).addClass('active');
+      $(tab_id).addClass('active');
+    })
+
+    $('.dropdown-toggle').click(function () {
+      var hasclass = $(this).siblings().hasClass('show');
+      //		console.log(hasclass);
+      $(this).parents('#funds').find('.dropdown-menu').removeClass('show');
+      if (hasclass == false) {
+        $(this).siblings('.dropdown-menu').addClass('show');
+      }
+      else {
+        $(this).siblings('.dropdown-menu').removeClass('show');
+      }
+    })
+
+    $('.close_dropdown').click(function () {
+      $(this).parents('.dropdown-menu').removeClass('show');
+    })
+
+    //dialog box styles
+    $('.dropdown-item.open_dialogbox').click(function () {
+      $('#myModal').fadeIn();
+      var fundname = $(this).data('name');
+      $('#myModal').find('.modal-title').text(fundname);
+    })
+    //dialog box close styles
+    function close_dialogbox() {
+      $('#myModal').fadeOut();
+      $('.dropdown-menu').removeClass('show');
+    }
+
+    $('.nav-sidebar > .nav-item').click(function () {
+        $('.megamenu').hide();
+        $('.has-megamenu').removeClass('megamenu-open');
+        $('.megamenu').removeClass('show');
+        if ($(this).siblings('.nav-item').hasClass('menu-open')) {
+          $('.nav-sidebar > .nav-item').removeClass('menu-open').find('.nav-treeview').hide();
+        }
+      })
+      $('.nav-sidebar .sub-nav').click(function () {
+        console.log($(this).siblings('.nav-item').hasClass('menu-open'));
+        var hassubnav = $(this).siblings('.nav-item').hasClass('menu-open');
+        if (hassubnav != false) {
+          $(this).siblings().removeClass('menu-open').find('.nav-treeview').hide();
+        }
+        // if($(this).siblings('.nav-item').hasClass('menu-open')){
+        //   $('.nav-sidebar > .nav-item.sub-nav').removeClass('menu-open').find('.nav-treeview').hide();
+        // }
+      })
+      $('.megamenu').hide();
+
+$('.has-megamenu').click(function (e) {
+  $('.sidebar-mini').addClass('sidebar-open').removeClass('sidebar-collapse');
+  $('.has-megamenu').removeClass('megamenu-open');
+  setTimeout(()=>{
+    $(this).addClass('megamenu-open');
+    var menuId = $(this).attr('id');
+    // console.log($(this).offset(),$('.megamenu[data-id='+menuId+']').offset());
+    var org = $(this).offset();
+    $('.megamenu[data-id=' + menuId + ']').toggle();
+    $('.megamenu[data-id=' + menuId + ']').addClass('show');
+    $('.megamenu[data-id=' + menuId + ']').offset({ top: org.top, left: org.left + 285 });
+   
+  },100)
+});
+ 
+  $('.sidebar').scroll(function(){
+    var org = $('.megamenu-open').offset();
+    var menuId = $('.megamenu-open').attr('id');
+    $('.megamenu[data-id=' + menuId + ']').offset({ top: org.top, left: org.left + 285 });
+  });
+ 
+$(document).click(function (e) {
+  if (!$(e.target).is('.nav-item, .nav-item *, .megamenu, .megamenu *')) {
+    $('.megamenu').hide();
+    $('.has-megamenu').removeClass('megamenu-open');
+    $('.megamenu').removeClass('show');
+  }
+});
+
+ 
+
+    // var build_ = $('.build-active-list-container');
+    // var active_ =$('.active-list-container');
+    // var choose_ =$('.choose-action');
+
+
+
+    $('#build , .arrow-left').click(function () {
+      // build_.show();
+      // choose_.animate({'left':'100%'});
+
+      //   setTimeout(function(){ 
+      //     build_.animate({'left':'0'});
+      //     choose_.hide() ;
+      //     }, 100);
+
+
+      //   active_.addClass('col-md-5').removeClass('col-md-7');
+
+
+      $('#build').removeClass('btn-default').addClass('btn-success');
+      $('#choose').addClass('btn-default').removeClass('btn-success');
+    })
+
+    $('#choose , .arrow-right').click(function () {
+      // choose_.css({'left':'50'});
+      //   build_.animate({'left':'-100%'})
+      //   choose_.show() ;
+
+      //   setTimeout(function(){ 
+      //     build_.hide();
+      //     choose_.animate({'left':'0'});
+
+      //      }, 100);
+      //      active_.addClass('col-md-7').removeClass('col-md-5');
+
+
+      // $('.build-active-list-container').hide();
+      $('#choose').removeClass('btn-default').addClass('btn-success');
+      $('#build').addClass('btn-default').removeClass('btn-success');
+
+    })
+    $(function () {
+      $(".carousel-no-style").jCarouselLite({
+        btnNext: ".next-no-style",
+        btnPrev: ".prev-no-style",
+        circular: false,
+        visible: 2
+      });
+    });
+
+    $(window).click(function () {
+      //  if(!$('body').hasClass('sidebar-open')){
+      //    $('.carousel-no-style').css('width','100%');
+      //    setTimeout(function(){
+      //     var carouselWidth = $('.ressearch-row').css('width');
+      //     var iNum = parseInt(carouselWidth);
+      //     $('li.li-car-list').css('width', iNum/2);
+      //    },1000)
+      //  }
+      //  else{
+      //   $('.carousel-no-style').css('width','100%');
+      //    setTimeout(function(){
+      //     var carouselWidth = $('.ressearch-row').css('width');
+      //     var iNum = parseInt(carouselWidth);
+      //     $('li.li-car-list').css('width', iNum/2.1);
+      //    },1000)
+      //  }
+    })
+
+    var $newEntry = `<td><i class="fa fa-bell"></i></td>
+      <td><i class="fa fa-th-large"></i></td>
+      <td><input type="checkbox" /></td>
+      <td class="del"><i class="fa fa-trash"></i></td>
+    </tr>`;
+    var $Uid;
+    var $rmvId;
+    var $fcount = 0;
+    var $anim = '<span class="animball"></span>'
+
+    $('.results-list td i').click(function () {
+      $addItem = $(this);
+      $Uid = $addItem.closest('tr').attr('id');
+
+      if ($addItem.hasClass('di-ic_add_shopping_cart_24px')) {
+        $label = $addItem.closest('table').attr('data-name');
+
+        $fund = $addItem.addClass('di-ic_remove_circle_outline_24px').removeClass('di-ic_add_shopping_cart_24px').closest('tr').find('td:first-child').text();
+        $pushEntry = '<tr id="' + $Uid + '"> <td class="fundname" >' + $fund + '</td>' + $newEntry; 
+        // '<span class="'+$label+'">'+ $label+'</span>'+
+        $('.active-list-container .fund-results tbody').append($pushEntry);
+        $fcount++;
+        $('.fund-count').html($fcount);
+        $('.car-container').append($anim);
+        initpo = $addItem.offset();
+        baskpo = $('.fund-count').offset();
+        animpo = $('.animball').offset({ top: initpo.top, left: initpo.left });
+        getTop = initpo.top - baskpo.top + 5;
+        getLeft = initpo.left - baskpo.left + 20;
+        $('.animball').animate({ 'marginTop': -getTop, 'marginLeft': -getLeft }, 1000, 'easeOutQuart');
+        
+      }
+      else {
+        $addItem.removeClass('di-ic_remove_circle_outline_24px').addClass('di-ic_add_shopping_cart_24px');
+        $('.active-list-container .fund-results tbody tr').each(function () {
+          $newAttr = $(this).attr('id');
+          if ($newAttr == $Uid) {
+            $(this).remove();
+            return;
+          }
+        });
+        $fcount--;
+        $('.fund-count').html($fcount);
+      }
+      setTimeout(function () {
+        $('.animball').fadeOut();
+      }, 300)
+    });
+
+    $(document).click(function (e) {
+      if ($(e.target).is('.del i')) {
+        $rmvFund = $(e.target).closest('tr');
+        $rmvId = $(e.target).closest('tr').attr('id');
+        $rmvFund.remove();
+        $('.results-list tr').each(function () {
+          if ($(this).attr('id') == $rmvId) {
+            $(this).find('i').removeClass('di-ic_remove_circle_outline_24px').addClass('di-ic_add_shopping_cart_24px');
+          }
+        })
+        $fcount--;
+        $('.fund-count').html($fcount)
+      }
+      // $rmvItem = $(this).closest('tr');
+      // $rmvId = $(this).closest('tr').attr('id');
+      // $rmvItem.remove();
+    });
+    var $id_;
+    $('#fundslist').select2();
+    $('#SelectSector').select2();
+    $('#SelectMarket').select2();
+    $('#SelectModel').select2();
+
+    $('#fundslist').on('select2:select', function (e) {
+      var $data = e.params.data;
+      $id_ = $data.id;
+      $('.select2-tab').hide();
+      $('.select2-tab').each(function () {
+        if ($(this).attr('id') == $id_) {
+          $(this).show();
+          console.log()
+          $('.fund-search').attr('data-target', '#filterSection' + $id_.split(" ").join(""));
+        }
+      });
+    });
+    $('#wrapper .pagination').hide();
+    $('#Universe').on('select2:select',function(e){
+      $('.for-funds thead').hide();
+      $('.for-funds tbody,.for-funds .pagination').show();
+      $('.for-funds .card-title').html('Fund Results (14)');
+      var $data = e.params.data;
+      id_ = $data.id;
+      if(id_=='A'){
+        $('.for-funds thead').show();
+        $('.for-funds tbody,.for-funds .pagination').hide();
+        $('.for-funds .card-title').html('Fund Results (0)');
+      }
+    })
+    $('#SelectSector').on('select2:select',function(e){
+      $('.for-sector thead').hide();
+      $('.for-sector tbody,.for-sector .pagination').show();
+      $('.for-sector .card-title').html('Sector Results (10)');
+      var $data = e.params.data;
+      id_ = $data.id;
+      if(id_=='A'){
+        $('.for-sector thead').show();
+        $('.for-sector tbody,.for-sector .pagination').hide();
+        $('.for-sector .card-title').html('Sector Results (0)');
+      }
+    })
+    $('#SelectMarket').on('select2:select',function(e){
+      $('.for-indices thead').hide();
+      $('.for-indices tbody,.for-indices .pagination').show();
+      $('.for-indices .card-title').html('Market Indices Results (10)');
+      var $data = e.params.data;
+      id_ = $data.id;
+      if(id_=='A'){
+        $('.for-indices thead').show();
+        $('.for-indices tbody,.for-indices .pagination').hide();
+        $('.for-indices .card-title').html('Market Indices Results (0)');
+      }
+    })
+    $('#SelectModel').on('select2:select',function(e){
+      $('.for-portfolio thead').hide();
+      $('.for-portfolio tbody,.for-portfolio .pagination').show();
+      $('.for-portfolio .card-title').html('Portfolios (10)');
+      var $data = e.params.data;
+      id_ = $data.id;
+      if(id_=='A'){
+        $('.for-portfolio thead').show();
+        $('.for-portfolio tbody,.for-portfolio .pagination').hide();
+        $('.for-portfolio .card-title').html('Portfolios (0)');
+      }
+    })
+
+   
+  </script>
+</body>
+
+</html>
